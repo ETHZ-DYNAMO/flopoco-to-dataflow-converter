@@ -1,0 +1,20 @@
+source float_components/array_RAM_ap_fadd_8_full_dsp_32_ip.tcl
+source float_components/array_RAM_ap_fcmp_0_no_dsp_32_ip.tcl
+source float_components/array_RAM_ap_fdiv_28_no_dsp_32_ip.tcl
+source float_components/array_RAM_ap_fmul_4_max_dsp_32_ip.tcl
+source float_components/array_RAM_ap_fsqrt_26_no_dsp_32_ip.tcl
+source float_components/array_RAM_ap_fsub_8_full_dsp_32_ip.tcl
+source float_components/array_RAM_ap_sitofp_4_no_dsp_32_ip.tcl
+read_vhdl -vhdl2008 float_components/array_RAM_fadd_32bkb.vhd
+read_vhdl -vhdl2008 float_components/array_RAM_fadd_32ns_32ns_32_10_full_dsp_1.vhd
+read_vhdl -vhdl2008 float_components/array_RAM_fcmp_32cud.vhd
+read_vhdl -vhdl2008 float_components/array_RAM_fcmp_32ns_32ns_1_2_1.vhd
+read_vhdl -vhdl2008 float_components/array_RAM_fdiv_32dEe.vhd
+read_vhdl -vhdl2008 float_components/array_RAM_fdiv_32ns_32ns_32_30_1.vhd
+read_vhdl -vhdl2008 float_components/array_RAM_fmul_32cud.vhd
+read_vhdl -vhdl2008 float_components/array_RAM_fmul_32ns_32ns_32_6_max_dsp_1.vhd
+read_vhdl -vhdl2008 float_components/array_RAM_fsqrt_3bkb.vhd
+read_vhdl -vhdl2008 float_components/array_RAM_fsub_32bkb.vhd
+read_vhdl -vhdl2008 float_components/array_RAM_fsub_32ns_32ns_32_10_full_dsp_1.vhd
+read_vhdl -vhdl2008 float_components/array_RAM_mul_32sbkb.vhd
+read_vhdl -vhdl2008 float_components/array_RAM_sitofp_bkb.vhd

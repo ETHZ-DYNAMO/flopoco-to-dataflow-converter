@@ -1,0 +1,9 @@
+*.pyc
+__pycache__/
+.vscode/
+*.vhd~
+*.log
+*.json~
+*.vcd
+example/
+replication_files/
