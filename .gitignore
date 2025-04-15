@@ -7,3 +7,7 @@ __pycache__/
 *.vcd
 example/
 replication_files/
+*~
+\#*\#
+.\#*
+
