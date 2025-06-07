@@ -1,6 +1,8 @@
-# PyFloGen - VHDL Generation for FloPoCo and Dynamatic Integration
+# Flop2Dyn - VHDL Generation for FloPoCo and Dynamatic Integration
 
-PyFloGen is a toolkit for generating VHDL code for floating-point operations, specifically tailored for integration with Dynamatic, an academic, open-source high-level synthesis compiler. This tool automates the process of creating VHDL modules via FloPoCo, making it easier to incorporate floating-point computations in Dynamatic's dynamically-scheduled circuits generated from C/C++ code.
+Flop2Dyn is a toolkit for generating VHDL code for floating-point operations, specifically tailored for integration with Dynamatic, an academic, open-source high-level synthesis compiler. This tool automates the process of creating VHDL modules via FloPoCo, making it easier to incorporate floating-point computations in Dynamatic's dynamically-scheduled circuits generated from C/C++ code.
+
+It also includes as submodule a dedicated Unit Profiler, which is used to evaluate with Vivado the timing and area requirements of the generated units. This submodule has a dedicated README, found in its folder. 
 
 ## Features
 
