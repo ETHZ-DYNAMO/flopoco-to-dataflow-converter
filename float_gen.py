@@ -20,7 +20,7 @@ def main():
     epilog=f'''\
 Supported Operators:
   {supported_ops_text}
-Examples:
+Examples (sudo added since the editing and generation of files may require root privileges):
   sudo python3 float_gen.py --name FloatingPointAdder --bitSize 32 --targetFrequencyMHz 450 --noInputConversion 
   
 

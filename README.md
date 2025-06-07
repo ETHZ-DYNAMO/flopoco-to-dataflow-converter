@@ -24,6 +24,7 @@ PyFloGen is a toolkit for generating VHDL code for floating-point operations, sp
 - The directory lib contains additional VHDL code. The generated VHDL code will depend on this code.
 - setup.py includes default parameters and variables.
 - wrapper_template.vhd is the VHDL template with placeholders.
+- generator_script.sh is a sample script which showcases how to run several iterations efficiently. It's output is the sample input for the profiler side of this repository.
 
 ### Installation
 
@@ -57,5 +58,9 @@ If the reader desires to make alterations, here is a quick rundown of parts most
 
 ### Editing wrappers
 
-The file '''setup.py''' file contains the wrapper templates. These are structures as a primary templates, which then makes use of components listed in component_templates and defined above. This is done for readability, but also modularity. The components can in turn be defined with parameters, to be specified with '''format''' inside  '''wrapper_generator.py''', as is done for bit width for instance. 
-Notably, the actual injection of the component is done in '''wrapper_generator.py''', when wrapper_vhdl gets formatted. This notably allows logic-based block switching in Python : a sample usage of this feature is the opt-out usage of input & output conversions. 
+The file ```setup.py``` file contains the wrapper templates. These are structures as a primary templates, which then makes use of components listed in component_templates and defined above. This is done for readability, but also modularity. The components can in turn be defined with parameters, to be specified with ```format``` inside  ```wrapper_generator.py``` as is done for bit width for instance. 
+Notably, the actual injection of the component is done in ```wrapper_generator.py``` when wrapper_vhdl gets formatted. This notably allows logic-based block switching in Python : a sample usage of this feature is the opt-out usage of input & output conversions. 
+
+### AutoScraper
+
+The file ```auto_scraper.py``` reads the list of supported FloPoCo operations directly from the docs found at the install location. It is functional, and outputs the results in the correct formatting for use inside setup.py; however, since the overwhelming majority of these functions have not been tested in the context of Flop2Dyn, I have elected to not integrate it by default. The reader is welcome to redirect the write output appropriately if he wishes to use them instead. 

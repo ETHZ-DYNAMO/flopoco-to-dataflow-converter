@@ -27,7 +27,7 @@ for op in "${ops[@]}"; do
                     none)
                         in_flag=""
                         out_flag=""
-                        conv_label="noIO"
+                        conv_label="wIO"
                         ;;
                     input)
                         in_flag="--noInputConversion"

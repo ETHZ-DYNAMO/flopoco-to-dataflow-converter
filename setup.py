@@ -1,4 +1,5 @@
 import os
+import sys
 #List of global variables:
 
 # Name of the configuration file
@@ -7,7 +8,36 @@ config_file_name = "float_config.json"
 # Path to the FloPoCo executable 
 #flopoco_executable_path = '/home/sevket/flopoco/build/flopoco'
 #flopoco_executable_path = '/usr/local/bin/flopoco/'  
+
 flopoco_executable_path = '/home/therandomheretek/Desktop/ETH_Masters/DYNAMO_Semester_Project/code_dynamtic/CompleteFlop2Dyn/Flop2Dyn-main/flopoco/build/flopoco'
+
+def check_and_update_flopoco_path():
+    global flopoco_executable_path
+    while not (os.path.isfile(flopoco_executable_path) and os.access(flopoco_executable_path, os.X_OK)):
+        print(f"FloPoCo executable not found. Path may not yet have been set, or an incorrect path may have been set. Current path is: {flopoco_executable_path}")
+        new_path = input("Please enter the install path for FloPoCo on this system: ").strip()
+        if not new_path:
+            print("No path entered. Exiting.")
+            sys.exit(1)
+        flopoco_executable_path = '/home/therandomheretek/Desktop/ETH_Masters/DYNAMO_Semester_Project/code_dynamtic/CompleteFlop2Dyn/Flop2Dyn-main/flopoco/build/flopoco'
+        # Overwrite this file with the new path
+        update_setup_py_path(new_path)
+
+def update_setup_py_path(new_path):
+    setup_py = os.path.abspath(__file__)
+    with open(setup_py, "r") as f:
+        lines = f.readlines()
+    with open(setup_py, "w") as f:
+        for line in lines:
+            if line.strip().startswith("flopoco_executable_path"):
+                leading_ws = line[:line.find("flopoco_executable_path")]
+                f.write(f"{leading_ws}flopoco_executable_path = '{new_path}'\n")
+            else:
+                f.write(line)
+
+check_and_update_flopoco_path()
+
+#flopoco_executable_path = '/home/therandomheretek/Desktop/ETH_Masters/DYNAMO_Semester_Project/code_dynamtic/CompleteFlop2Dyn/Flop2Dyn-main/flopoco/build/flopoco'
 
 # Path to wrapper template
 template_path = 'wrapper_template.vhd'
@@ -25,6 +55,9 @@ out_file_name = 'combined.vhd'
 wrapper_file_name = 'wrapper.vhd'
 
 # Info about all operators, in particular input and output size of flopoco operators
+
+filepath_to_flopoco = "/Desktop/ETH_Masters/DYNAMO_Semester_Project/code_dynamtic/CompleteFlop2Dyn/Flop2Dyn-main/flopoco/doc/weboperators_5.0.git.html"  # just get from git, getting the version from the local - consider dockerising because it kinda solves everything
+
 operators_info = {
     "FloatingPointAdder": {
         "input_size": "bitSize",

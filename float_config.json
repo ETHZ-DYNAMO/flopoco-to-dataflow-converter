@@ -3,7 +3,7 @@
     {
       "name": "FloatingPointAdder",
       "bitSize": 32,
-      "targetFrequencyMHz": 450,
+      "targetFrequencyMHz": 100,
       "noInputConversion": true,
       "noOutputConversion": true
     }

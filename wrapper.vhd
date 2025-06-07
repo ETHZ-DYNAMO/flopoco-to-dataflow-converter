@@ -23,7 +23,7 @@ port (
     rhs_valid    : in std_logic;
     result_ready : in std_logic;
     -- outputs
-     result       : out std_logic_vector(33  downto 0);
+     result       : out std_logic_vector(31  downto 0);
     result_valid : out std_logic;
     lhs_ready    : out std_logic;
     rhs_ready    : out std_logic
@@ -88,8 +88,13 @@ architecture arch of fadd_op is
 
         
 
-        -- No output conversion: direct assignment
-       result <= ip_result;
+        nfloat2ieee : entity work.OutputIEEE_32bit(arch)
+                port map (
+                    --input
+                    X => ip_result,
+                    --ouput
+                    R => result
+                );
 
         operator : entity work.FloatingPointAdder(arch)
         port map (
