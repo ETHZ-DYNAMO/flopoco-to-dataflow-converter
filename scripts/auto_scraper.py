@@ -82,13 +82,14 @@ with open(script_path, 'a') as file:
     file.write(dict_str)
     print(f"Dictionary successfully appended to {script_path}")
 
+
 # Auto-generated dictionary
 operators_info = {
     "Shifter": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "Shifter",
         "wrapper_name": "shifter_op",
@@ -97,8 +98,8 @@ operators_info = {
     "LZOC": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "LZOC",
         "wrapper_name": "lzoc_op",
@@ -107,8 +108,8 @@ operators_info = {
     "GenericMux": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "GenericMux",
         "wrapper_name": "genericmux_op",
@@ -117,8 +118,8 @@ operators_info = {
     "GenericLut": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "GenericLut",
         "wrapper_name": "genericlut_op",
@@ -127,8 +128,8 @@ operators_info = {
     "Normalizer": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "Normalizer",
         "wrapper_name": "normalizer_op",
@@ -137,8 +138,8 @@ operators_info = {
     "LZOC3": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "LZOC3",
         "wrapper_name": "lzoc3_op",
@@ -147,8 +148,8 @@ operators_info = {
     "ShiftReg": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "ShiftReg",
         "wrapper_name": "shiftreg_op",
@@ -157,8 +158,8 @@ operators_info = {
     "FixMultAdd": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FixMultAdd",
         "wrapper_name": "fixmultadd_op",
@@ -167,8 +168,8 @@ operators_info = {
     "IntSquarerLUT": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "IntSquarerLUT",
         "wrapper_name": "intsquarerlut_op",
@@ -177,8 +178,8 @@ operators_info = {
     "IntMultiAdder": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "IntMultiAdder",
         "wrapper_name": "intmultiadder_op",
@@ -187,8 +188,8 @@ operators_info = {
     "IntAddSub": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "IntAddSub",
         "wrapper_name": "intaddsub_op",
@@ -197,8 +198,8 @@ operators_info = {
     "IntKaratsubaRectangular": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "IntKaratsubaRectangular",
         "wrapper_name": "intkaratsubarectangular_op",
@@ -207,8 +208,8 @@ operators_info = {
     "IntMultiplierLUT": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "IntMultiplierLUT",
         "wrapper_name": "intmultiplierlut_op",
@@ -217,8 +218,8 @@ operators_info = {
     "IntConstantComparator": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "IntConstantComparator",
         "wrapper_name": "intconstantcomparator_op",
@@ -227,8 +228,8 @@ operators_info = {
     "DSPBlock": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "DSPBlock",
         "wrapper_name": "dspblock_op",
@@ -237,8 +238,8 @@ operators_info = {
     "IntDualAddSub": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "IntDualAddSub",
         "wrapper_name": "intdualaddsub_op",
@@ -247,8 +248,8 @@ operators_info = {
     "BitheapTest": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "BitheapTest",
         "wrapper_name": "bitheaptest_op",
@@ -257,8 +258,8 @@ operators_info = {
     "IntMultiplier": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "IntMultiplier",
         "wrapper_name": "intmultiplier_op",
@@ -267,8 +268,8 @@ operators_info = {
     "IntSquarer": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "IntSquarer",
         "wrapper_name": "intsquarer_op",
@@ -277,8 +278,8 @@ operators_info = {
     "Compressor": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "Compressor",
         "wrapper_name": "compressor_op",
@@ -287,8 +288,8 @@ operators_info = {
     "IntComparator": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "IntComparator",
         "wrapper_name": "intcomparator_op",
@@ -297,8 +298,8 @@ operators_info = {
     "IntAdder": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "IntAdder",
         "wrapper_name": "intadder_op",
@@ -307,8 +308,8 @@ operators_info = {
     "IEEEFPFMA": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "IEEEFPFMA",
         "wrapper_name": "ieeefpfma_op",
@@ -317,8 +318,8 @@ operators_info = {
     "IEEEFPAdd": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "IEEEFPAdd",
         "wrapper_name": "ieeefpadd_op",
@@ -327,8 +328,8 @@ operators_info = {
     "FloatingPointFPMult": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FPMult",
         "wrapper_name": "fpmult_op",
@@ -337,8 +338,8 @@ operators_info = {
     "FloatingPointFPSqrt": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FPSqrt",
         "wrapper_name": "fpsqrt_op",
@@ -347,8 +348,8 @@ operators_info = {
     "FloatingPointFPComparator": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FPComparator",
         "wrapper_name": "fpcomparator_op",
@@ -357,8 +358,8 @@ operators_info = {
     "FloatingPointFPDiv": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FPDiv",
         "wrapper_name": "fpdiv_op",
@@ -377,8 +378,8 @@ operators_info = {
     "PositExp": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "PositExp",
         "wrapper_name": "positexp_op",
@@ -387,8 +388,8 @@ operators_info = {
     "PositAdd": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "PositAdd",
         "wrapper_name": "positadd_op",
@@ -397,8 +398,8 @@ operators_info = {
     "PositFunctionByTable": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "PositFunctionByTable",
         "wrapper_name": "positfunctionbytable_op",
@@ -407,8 +408,8 @@ operators_info = {
     "IntConstMult": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "IntConstMult",
         "wrapper_name": "intconstmult_op",
@@ -417,8 +418,8 @@ operators_info = {
     "FloatingPointFPConstMult": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FPConstMult",
         "wrapper_name": "fpconstmult_op",
@@ -427,8 +428,8 @@ operators_info = {
     "FixRealShiftAdd": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FixRealShiftAdd",
         "wrapper_name": "fixrealshiftadd_op",
@@ -437,8 +438,8 @@ operators_info = {
     "FloatingPointFPConstMultRational": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FPConstMultRational",
         "wrapper_name": "fpconstmultrational_op",
@@ -447,8 +448,8 @@ operators_info = {
     "FloatingPointFPConstDiv": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FPConstDiv",
         "wrapper_name": "fpconstdiv_op",
@@ -457,8 +458,8 @@ operators_info = {
     "FixRealConstMult": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FixRealConstMult",
         "wrapper_name": "fixrealconstmult_op",
@@ -467,8 +468,8 @@ operators_info = {
     "IntConstDiv": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "IntConstDiv",
         "wrapper_name": "intconstdiv_op",
@@ -477,8 +478,8 @@ operators_info = {
     "IntConstMultShiftAddOptTernary": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "IntConstMultShiftAddOptTernary",
         "wrapper_name": "intconstmultshiftaddoptternary_op",
@@ -487,8 +488,8 @@ operators_info = {
     "FixRealKCM": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FixRealKCM",
         "wrapper_name": "fixrealkcm_op",
@@ -497,8 +498,8 @@ operators_info = {
     "FixFixConstMult": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FixFixConstMult",
         "wrapper_name": "fixfixconstmult_op",
@@ -507,8 +508,8 @@ operators_info = {
     "FixComplexKCM": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FixComplexKCM",
         "wrapper_name": "fixcomplexkcm_op",
@@ -517,8 +518,8 @@ operators_info = {
     "IntConstMultShiftAddOpt": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "IntConstMultShiftAddOpt",
         "wrapper_name": "intconstmultshiftaddopt_op",
@@ -527,8 +528,8 @@ operators_info = {
     "IntConstMultShiftAddRPAG": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "IntConstMultShiftAddRPAG",
         "wrapper_name": "intconstmultshiftaddrpag_op",
@@ -537,8 +538,8 @@ operators_info = {
     "IntConstMultShiftAdd": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "IntConstMultShiftAdd",
         "wrapper_name": "intconstmultshiftadd_op",
@@ -547,8 +548,8 @@ operators_info = {
     "Fix2DNorm": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "Fix2DNorm",
         "wrapper_name": "fix2dnorm_op",
@@ -557,8 +558,8 @@ operators_info = {
     "FixSinCos": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FixSinCos",
         "wrapper_name": "fixsincos_op",
@@ -567,8 +568,8 @@ operators_info = {
     "FixAtan2": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FixAtan2",
         "wrapper_name": "fixatan2_op",
@@ -577,8 +578,8 @@ operators_info = {
     "FixSinOrCos": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FixSinOrCos",
         "wrapper_name": "fixsinorcos_op",
@@ -587,8 +588,8 @@ operators_info = {
     "FloatingPointFPExp": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FPExp",
         "wrapper_name": "fpexp_op",
@@ -597,8 +598,8 @@ operators_info = {
     "FloatingPointFPLog": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FPLog",
         "wrapper_name": "fplog_op",
@@ -607,8 +608,8 @@ operators_info = {
     "FloatingPointFPPow": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FPPow",
         "wrapper_name": "fppow_op",
@@ -617,8 +618,8 @@ operators_info = {
     "IEEEFPExp": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "IEEEFPExp",
         "wrapper_name": "ieeefpexp_op",
@@ -627,8 +628,8 @@ operators_info = {
     "Exp": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "Exp",
         "wrapper_name": "exp_op",
@@ -637,8 +638,8 @@ operators_info = {
     "FixFunctionByMultipartiteTable": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FixFunctionByMultipartiteTable",
         "wrapper_name": "fixfunctionbymultipartitetable_op",
@@ -647,8 +648,8 @@ operators_info = {
     "FixFunctionByTable": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FixFunctionByTable",
         "wrapper_name": "fixfunctionbytable_op",
@@ -657,8 +658,8 @@ operators_info = {
     "UniformPiecewisePolyApprox": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "UniformPiecewisePolyApprox",
         "wrapper_name": "uniformpiecewisepolyapprox_op",
@@ -667,8 +668,8 @@ operators_info = {
     "FixFunctionByPiecewisePoly": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FixFunctionByPiecewisePoly",
         "wrapper_name": "fixfunctionbypiecewisepoly_op",
@@ -677,8 +678,8 @@ operators_info = {
     "FixFunctionBySimplePoly": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FixFunctionBySimplePoly",
         "wrapper_name": "fixfunctionbysimplepoly_op",
@@ -687,8 +688,8 @@ operators_info = {
     "VaryingPiecewisePolyApprox": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "VaryingPiecewisePolyApprox",
         "wrapper_name": "varyingpiecewisepolyapprox_op",
@@ -697,8 +698,8 @@ operators_info = {
     "Posit2PIF": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "Posit2PIF",
         "wrapper_name": "posit2pif_op",
@@ -707,8 +708,8 @@ operators_info = {
     "OutputIEEE": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "OutputIEEE",
         "wrapper_name": "outputieee_op",
@@ -717,8 +718,8 @@ operators_info = {
     "InputIEEE": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "InputIEEE",
         "wrapper_name": "inputieee_op",
@@ -727,8 +728,8 @@ operators_info = {
     "Fix2FP": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "Fix2FP",
         "wrapper_name": "fix2fp_op",
@@ -737,8 +738,8 @@ operators_info = {
     "PIF2Posit": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "PIF2Posit",
         "wrapper_name": "pif2posit_op",
@@ -747,8 +748,8 @@ operators_info = {
     "FloatingPointFP2Fix": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FP2Fix",
         "wrapper_name": "fp2fix_op",
@@ -757,8 +758,8 @@ operators_info = {
     "PIF2Fix": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "PIF2Fix",
         "wrapper_name": "pif2fix_op",
@@ -767,8 +768,8 @@ operators_info = {
     "Posit2Posit": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "Posit2Posit",
         "wrapper_name": "posit2posit_op",
@@ -777,8 +778,8 @@ operators_info = {
     "Posit2FP": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "Posit2FP",
         "wrapper_name": "posit2fp_op",
@@ -787,8 +788,8 @@ operators_info = {
     "FixRootRaisedCosine": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FixRootRaisedCosine",
         "wrapper_name": "fixrootraisedcosine_op",
@@ -797,8 +798,8 @@ operators_info = {
     "FixHalfSine": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FixHalfSine",
         "wrapper_name": "fixhalfsine_op",
@@ -807,8 +808,8 @@ operators_info = {
     "FixFIR": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FixFIR",
         "wrapper_name": "fixfir_op",
@@ -817,8 +818,8 @@ operators_info = {
     "IntFIRTransposed": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "IntFIRTransposed",
         "wrapper_name": "intfirtransposed_op",
@@ -827,8 +828,8 @@ operators_info = {
     "FixSOPCfull": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FixSOPCfull",
         "wrapper_name": "fixsopcfull_op",
@@ -837,8 +838,8 @@ operators_info = {
     "FixIIR": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FixIIR",
         "wrapper_name": "fixiir_op",
@@ -847,8 +848,8 @@ operators_info = {
     "FixIIRShiftAdd": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FixIIRShiftAdd",
         "wrapper_name": "fixiirshiftadd_op",
@@ -857,8 +858,8 @@ operators_info = {
     "FixSOPC": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "FixSOPC",
         "wrapper_name": "fixsopc_op",
@@ -867,8 +868,8 @@ operators_info = {
     "SortWrapper": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "SortWrapper",
         "wrapper_name": "sortwrapper_op",
@@ -877,8 +878,8 @@ operators_info = {
     "SortingNetwork": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "SortingNetwork",
         "wrapper_name": "sortingnetwork_op",
@@ -887,8 +888,8 @@ operators_info = {
     "TaoSort": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "TaoSort",
         "wrapper_name": "taosort_op",
@@ -897,8 +898,8 @@ operators_info = {
     "TargetModel": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "TargetModel",
         "wrapper_name": "targetmodel_op",
@@ -907,8 +908,8 @@ operators_info = {
     "TutorialOperator": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "TutorialOperator",
         "wrapper_name": "tutorialoperator_op",
@@ -917,8 +918,8 @@ operators_info = {
     "DAGOperator": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "DAGOperator",
         "wrapper_name": "dagoperator_op",
@@ -927,8 +928,8 @@ operators_info = {
     "SRTDivNbBitsMin": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "SRTDivNbBitsMin",
         "wrapper_name": "srtdivnbbitsmin_op",
@@ -937,8 +938,8 @@ operators_info = {
     "RegisterSandwich": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "RegisterSandwich",
         "wrapper_name": "registersandwich_op",
@@ -947,8 +948,8 @@ operators_info = {
     "TestBench": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "TestBench",
         "wrapper_name": "testbench_op",
@@ -957,8 +958,8 @@ operators_info = {
     "AutoTest": {
         "input_size": "bitSize",
         "output_size": {
-            32: 1,
-            64: 1,
+            32: 34,
+            64: 66,
         },
         "flopoco_name": "AutoTest",
         "wrapper_name": "autotest_op",

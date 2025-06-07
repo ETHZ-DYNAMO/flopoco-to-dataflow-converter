@@ -46,7 +46,7 @@ for op in "${ops[@]}"; do
                         ;;
                 esac
 
-                dir="generation_results0425/${op}_${bit}_${freq}_${conv_label}"
+                dir="../generation_results0425/${op}_${bit}_${freq}_${conv_label}"
 
                 if [ -d "$dir" ]; then
                     continue
