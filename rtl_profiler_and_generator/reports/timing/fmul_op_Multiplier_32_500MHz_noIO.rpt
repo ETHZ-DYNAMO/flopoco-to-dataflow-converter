@@ -1,0 +1,99 @@
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Mon Jun  9 17:44:42 2025
+| Host         : ee-tik-dynamo-eda1 running 64-bit AlmaLinux release 8.10 (Cerulean Leopard)
+| Command      : report_timing
+| Design       : fmul_op
+| Device       : 7k160t-fbg484
+| Speed File   : -1  PRODUCTION 1.12 2017-02-17
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -0.783ns  (required time - arrival time)
+  Source:                 operator/SignificandMultiplication/bitheapFinalAdd_bh7/Y_c2_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Destination:            operator/RoundingAdder/X_1_c3_reg[30]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            2.000ns  (clk rise@2.000ns - clk rise@0.000ns)
+  Data Path Delay:        2.485ns  (logic 1.365ns (54.920%)  route 1.120ns (45.080%))
+  Logic Levels:           11  (CARRY4=8 LUT2=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.296ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.346ns = ( 3.346 - 2.000 ) 
+    Source Clock Delay      (SCD):    1.652ns
+    Clock Pessimism Removal (CPR):    0.010ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=227, unset)          1.652     1.652    operator/SignificandMultiplication/bitheapFinalAdd_bh7/clk
+    SLICE_X14Y95         FDRE                                         r  operator/SignificandMultiplication/bitheapFinalAdd_bh7/Y_c2_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X14Y95         FDRE (Prop_fdre_C_Q)         0.282     1.934 r  operator/SignificandMultiplication/bitheapFinalAdd_bh7/Y_c2_reg[2]/Q
+                         net (fo=1, routed)           0.444     2.378    operator/SignificandMultiplication/bitheapFinalAdd_bh7/Y_c2[2]
+    SLICE_X15Y95         LUT2 (Prop_lut2_I1_O)        0.153     2.531 r  operator/SignificandMultiplication/bitheapFinalAdd_bh7/plusOp_carry_i_1/O
+                         net (fo=1, routed)           0.000     2.531    operator/SignificandMultiplication/bitheapFinalAdd_bh7/plusOp_carry_i_1_n_0
+    SLICE_X15Y95         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.235     2.766 r  operator/SignificandMultiplication/bitheapFinalAdd_bh7/plusOp_carry/CO[3]
+                         net (fo=1, routed)           0.000     2.766    operator/SignificandMultiplication/bitheapFinalAdd_bh7/plusOp_carry_n_0
+    SLICE_X15Y96         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058     2.824 r  operator/SignificandMultiplication/bitheapFinalAdd_bh7/plusOp_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     2.824    operator/SignificandMultiplication/bitheapFinalAdd_bh7/plusOp_carry__0_n_0
+    SLICE_X15Y97         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058     2.882 r  operator/SignificandMultiplication/bitheapFinalAdd_bh7/plusOp_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     2.882    operator/SignificandMultiplication/bitheapFinalAdd_bh7/plusOp_carry__1_n_0
+    SLICE_X15Y98         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058     2.940 r  operator/SignificandMultiplication/bitheapFinalAdd_bh7/plusOp_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     2.940    operator/SignificandMultiplication/bitheapFinalAdd_bh7/plusOp_carry__2_n_0
+    SLICE_X15Y99         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058     2.998 r  operator/SignificandMultiplication/bitheapFinalAdd_bh7/plusOp_carry__3/CO[3]
+                         net (fo=1, routed)           0.001     2.999    operator/SignificandMultiplication/bitheapFinalAdd_bh7/plusOp_carry__3_n_0
+    SLICE_X15Y100        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058     3.057 r  operator/SignificandMultiplication/bitheapFinalAdd_bh7/plusOp_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     3.057    operator/SignificandMultiplication/bitheapFinalAdd_bh7/plusOp_carry__4_n_0
+    SLICE_X15Y101        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058     3.115 r  operator/SignificandMultiplication/bitheapFinalAdd_bh7/plusOp_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     3.115    operator/SignificandMultiplication/bitheapFinalAdd_bh7/plusOp_carry__5_n_0
+    SLICE_X15Y102        CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.139     3.254 r  operator/SignificandMultiplication/bitheapFinalAdd_bh7/plusOp_carry__6/O[0]
+                         net (fo=53, routed)          0.364     3.618    operator/SignificandMultiplication/bitheapFinalAdd_bh7/sigProd_c2__0[47]
+    SLICE_X12Y102        LUT6 (Prop_lut6_I2_O)        0.155     3.773 r  operator/SignificandMultiplication/bitheapFinalAdd_bh7/X_1_c3[32]_i_2/O
+                         net (fo=5, routed)           0.312     4.084    operator/SignificandMultiplication/bitheapFinalAdd_bh7/X_1_c3[32]_i_2_n_0
+    SLICE_X13Y101        LUT4 (Prop_lut4_I1_O)        0.053     4.137 r  operator/SignificandMultiplication/bitheapFinalAdd_bh7/X_1_c3[30]_i_1/O
+                         net (fo=1, routed)           0.000     4.137    operator/RoundingAdder/D[29]
+    SLICE_X13Y101        FDRE                                         r  operator/RoundingAdder/X_1_c3_reg[30]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        2.000     2.000 r  
+                                                      0.000     2.000 r  clk (IN)
+                         net (fo=227, unset)          1.346     3.346    operator/RoundingAdder/clk
+    SLICE_X13Y101        FDRE                                         r  operator/RoundingAdder/X_1_c3_reg[30]/C
+                         clock pessimism              0.010     3.356    
+                         clock uncertainty           -0.035     3.321    
+    SLICE_X13Y101        FDRE (Setup_fdre_C_D)        0.034     3.355    operator/RoundingAdder/X_1_c3_reg[30]
+  -------------------------------------------------------------------
+                         required time                          3.355    
+                         arrival time                          -4.137    
+  -------------------------------------------------------------------
+                         slack                                 -0.783    
+
+
+
+
+
+Clock Frequency: 500 MHz
+Clock Period: 2.00000000000000000000 ns
+Worst Negative Slack (WNS): -0.783 ns

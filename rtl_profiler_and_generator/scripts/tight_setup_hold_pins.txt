@@ -1,0 +1,18 @@
++====================+===================+============================================+
+| Launch Setup Clock | Launch Hold Clock | Pin                                        |
++====================+===================+============================================+
+| clk                | clk               | operator/LZCAndShifter/level3_c5_reg[28]/D |
+| clk                | clk               | operator/LZCAndShifter/level3_c5_reg[27]/D |
+| clk                | clk               | operator/LZCAndShifter/level3_c5_reg[26]/D |
+| clk                | clk               | operator/LZCAndShifter/level3_c5_reg[43]/D |
+| clk                | clk               | operator/LZCAndShifter/level3_c5_reg[21]/D |
+| clk                | clk               | operator/LZCAndShifter/level3_c5_reg[32]/D |
+| clk                | clk               | operator/LZCAndShifter/level3_c5_reg[50]/D |
+| clk                | clk               | operator/LZCAndShifter/level3_c5_reg[51]/D |
+| clk                | clk               | operator/LZCAndShifter/level3_c5_reg[35]/D |
+| clk                | clk               | operator/LZCAndShifter/level3_c5_reg[39]/D |
+| clk                | clk               | operator/LZCAndShifter/level3_c5_reg[34]/D |
+| clk                | clk               | operator/LZCAndShifter/level3_c5_reg[23]/D |
+| clk                | clk               | operator/excRt2_c7_reg[1]/D                |
+| clk                | clk               | operator/excRt2_c7_reg[0]/D                |
++--------------------+-------------------+--------------------------------------------+

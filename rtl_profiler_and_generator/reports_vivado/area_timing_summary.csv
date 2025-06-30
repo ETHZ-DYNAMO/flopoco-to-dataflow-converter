@@ -1,0 +1,12 @@
+Operator,Bitwidth,Frequency_MHz,clock_period,Converters,Slack_ns,LUTs,Registers,DSPs,BRAMs,SRLs,max_latency,Real_Required_Clock_Period_ns
+Multiplier_Double_Full_Usage_NonBlocking,64,457,2.18818380744,noIO,0,275,502,10,0,0,,2.18818380744
+Multiplier_Double_Max_Usage_NonBlocking,64,457,2.18818380744,noIO,0,238,494,11,0,0,,2.18818380744
+Multiplier_Double_Medium_Usage_NonBlocking,64,457,2.18818380744,noIO,0,326,561,9,0,0,,2.18818380744
+Multiplier_Double_No_Usage_NonBlocking,64,368,2.71739130435,noIO,0,2231,2427,0,0,0,,2.71739130435
+Multiplier_Half_Full_Usage_NonBlocking,16,457,2.18818380744,noIO,0,53,90,1,0,0,,2.18818380744
+Multiplier_Half_Max_Usage_NonBlocking,16,457,2.18818380744,noIO,0,59,93,2,0,0,,2.18818380744
+Multiplier_Half_No_Usage_NonBlocking,16,465,2.15053763441,noIO,0,162,203,0,0,0,,2.15053763441
+Multiplier_Single_Full_Usage_NonBlocking,32,457,2.18818380744,noIO,0,113,166,2,0,0,,2.18818380744
+Multiplier_Single_Max_Usage_NonBlocking,32,462,2.164502165,noIO,0,77,123,3,0,0,,2.164502165
+Multiplier_Single_Medium_Usage_NonBlocking,32,457,2.18818380744,noIO,0,236,362,1,0,0,,2.18818380744
+Multiplier_Single_No_Usage_NonBlocking,32,524,1.90839694656,noIO,0,568,698,0,0,0,,1.90839694656

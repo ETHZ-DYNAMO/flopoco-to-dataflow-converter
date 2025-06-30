@@ -2,10 +2,10 @@
   "operators": [
     {
       "name": "FloatingPointAdder",
-      "bitSize": 32,
-      "targetFrequencyMHz": 450,
+      "bitSize": 64,
+      "targetFrequencyMHz": 800,
       "noInputConversion": true,
-      "noOutputConversion": false
+      "noOutputConversion": true
     }
   ]
 }

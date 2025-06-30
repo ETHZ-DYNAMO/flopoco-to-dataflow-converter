@@ -1,0 +1,7 @@
+Device,Package,Speed,Name,Operator,Input_Type,Output_Type,Optimization,DSP_Usage,Architecture,Clock,Max_Frequency_MHz,LUTs,Registers,DSPs,BRAMs,SRLs,Status,Version,Date
+xc7k70t,fbv676,1,k7_1_addsubtract_double_dspfull,Add_Subtract,Double,Double,Speed_Optimized,Full_Usage,NonBlocking,aclk,413,707,864,3,0,0,PRODUCTION,1.12,2017-02-17
+xc7k70t,fbv676,1,k7_1_addsubtract_half_dspmed,Add_Subtract,Half,Half,Speed_Optimized,Medium_Usage,NonBlocking,aclk,450,139,289,1,0,0,PRODUCTION,1.12,2017-02-17
+xc7k70t,fbv676,1,k7_1_divide_double_fullthroughput,Divide,Double,Double,NonBlocking,1,aclk,353,3245,5976,0,0,0,PRODUCTION,1.12,2017-02-17
+xc7k70t,fbv676,1,k7_1_divide_half_fullthroughput,Divide,Half,Half,NonBlocking,1,aclk,598,235,373,0,0,0,PRODUCTION,1.12,2017-02-17
+xc7k70t,fbv676,1,k7_1_multiply_double_dspfull,Multiply,Double,Double,Full_Usage,NonBlocking,aclk,457,276,502,10,0,0,PRODUCTION,1.12,2017-02-17
+xc7k70t,fbv676,1,k7_1_multiply_half_dspfull,Multiply,Half,Half,Full_Usage,NonBlocking,aclk,457,53,90,1,0,0,PRODUCTION,1.12,2017-02-17

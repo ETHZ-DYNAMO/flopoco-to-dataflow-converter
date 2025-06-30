@@ -1,0 +1,94 @@
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Sat Jun 28 22:47:58 2025
+| Host         : ee-tik-dynamo-eda1 running 64-bit AlmaLinux release 8.10 (Cerulean Leopard)
+| Command      : report_timing
+| Design       : fsub_op
+| Device       : 7k160t-fbg484
+| Speed File   : -1  PRODUCTION 1.12 2017-02-17
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -1.522ns  (required time - arrival time)
+  Source:                 operator/excExpFracX_c1_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@0.625ns period=1.250ns})
+  Destination:            operator/expDiff_c2_reg[5]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@0.625ns period=1.250ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            1.250ns  (clk rise@1.250ns - clk rise@0.000ns)
+  Data Path Delay:        2.773ns  (logic 1.724ns (62.163%)  route 1.049ns (37.837%))
+  Logic Levels:           9  (CARRY4=7 LUT3=1 LUT4=1)
+  Clock Path Skew:        -0.014ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.336ns = ( 2.586 - 1.250 ) 
+    Source Clock Delay      (SCD):    1.438ns
+    Clock Pessimism Removal (CPR):    0.088ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=783, unset)          1.438     1.438    operator/clk
+    SLICE_X13Y126        FDRE                                         r  operator/excExpFracX_c1_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X13Y126        FDRE (Prop_fdre_C_Q)         0.246     1.684 r  operator/excExpFracX_c1_reg[2]/Q
+                         net (fo=4, routed)           0.468     2.152    operator/excExpFracX_c1[2]
+    SLICE_X14Y126        LUT4 (Prop_lut4_I1_O)        0.156     2.308 r  operator/ltOp_carry_i_7/O
+                         net (fo=1, routed)           0.000     2.308    operator/ltOp_carry_i_7_n_0
+    SLICE_X14Y126        CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.310     2.618 r  operator/ltOp_carry/CO[3]
+                         net (fo=1, routed)           0.000     2.618    operator/ltOp_carry_n_0
+    SLICE_X14Y127        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     2.678 r  operator/ltOp_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     2.678    operator/ltOp_carry__0_n_0
+    SLICE_X14Y128        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     2.738 r  operator/ltOp_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     2.738    operator/ltOp_carry__1_n_0
+    SLICE_X14Y129        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     2.798 r  operator/ltOp_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     2.798    operator/ltOp_carry__2_n_0
+    SLICE_X14Y130        CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.173     2.971 r  operator/ltOp_carry__3/CO[0]
+                         net (fo=67, routed)          0.582     3.552    operator/ltOp
+    SLICE_X13Y130        LUT3 (Prop_lut3_I2_O)        0.156     3.708 r  operator/i__carry_i_4/O
+                         net (fo=1, routed)           0.000     3.708    operator/p_1_in[0]
+    SLICE_X13Y130        CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.290     3.998 r  operator/_inferred__3/i__carry/CO[3]
+                         net (fo=1, routed)           0.000     3.998    operator/_inferred__3/i__carry_n_0
+    SLICE_X13Y131        CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.213     4.211 r  operator/_inferred__3/i__carry__0/O[1]
+                         net (fo=1, routed)           0.000     4.211    operator/expDiff_c1[5]
+    SLICE_X13Y131        FDRE                                         r  operator/expDiff_c2_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        1.250     1.250 r  
+                                                      0.000     1.250 r  clk (IN)
+                         net (fo=783, unset)          1.336     2.586    operator/clk
+    SLICE_X13Y131        FDRE                                         r  operator/expDiff_c2_reg[5]/C
+                         clock pessimism              0.088     2.674    
+                         clock uncertainty           -0.035     2.639    
+    SLICE_X13Y131        FDRE (Setup_fdre_C_D)        0.051     2.690    operator/expDiff_c2_reg[5]
+  -------------------------------------------------------------------
+                         required time                          2.690    
+                         arrival time                          -4.211    
+  -------------------------------------------------------------------
+                         slack                                 -1.522    
+
+
+
+
+
+Clock Frequency: 800 MHz
+Clock Period: 1.25000000000000000000 ns
+Worst Negative Slack (WNS): -1.522 ns
