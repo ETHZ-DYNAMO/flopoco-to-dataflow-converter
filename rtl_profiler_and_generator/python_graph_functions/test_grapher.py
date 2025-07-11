@@ -29,7 +29,7 @@ def load_vivado_reference_data():
     try:
         vivado_df = pd.read_csv('../reports_vivado/reference_vivado_implementations.csv')
         # Convert frequency to clock period
-        vivado_df['Real_Required_Clock_Period_ns'] = 1000 / vivado_df['Max_Frequency_MHz']
+        vivado_df['Operating_Clock_Period_ns'] = 1000 / vivado_df['Max_Frequency_MHz']
         
         # Map Vivado operator names to match FloPoCo naming
         operator_mapping = {
@@ -82,15 +82,15 @@ def create_latency_vs_clock_period_graphs(df, reports_dir):
     
     for idx, op_bitwidth in enumerate(op_bitwidth_pairs):
         subset = df[df['Op_Bitwidth'] == op_bitwidth].copy()
-        subset = subset.sort_values('max_latency')
+        subset = subset.sort_values('latency_cycles')
         
         ax = axes_flat[idx]
-        ax.scatter(subset['max_latency'], subset['Real_Required_Clock_Period_ns'], 
+        ax.scatter(subset['latency_cycles'], subset['Operating_Clock_Period_ns'], 
                   alpha=0.7, s=60, color='blue')
         
         # Connect the points with lines
         if len(subset) > 1:
-            ax.plot(subset['max_latency'], subset['Real_Required_Clock_Period_ns'], 
+            ax.plot(subset['latency_cycles'], subset['Operating_Clock_Period_ns'], 
                    "r--", alpha=0.8, linewidth=2)
         
         ax.set_xlabel('Max Latency (cycles)')
@@ -100,9 +100,9 @@ def create_latency_vs_clock_period_graphs(df, reports_dir):
         
         # Add frequency labels for reference
         for _, row in subset.iterrows():
-            freq_mhz = 1000 / row['Real_Required_Clock_Period_ns']
+            freq_mhz = 1000 / row['Operating_Clock_Period_ns']
             ax.annotate(f'{freq_mhz:.0f}MHz', 
-                       (row['max_latency'], row['Real_Required_Clock_Period_ns']),
+                       (row['latency_cycles'], row['Operating_Clock_Period_ns']),
                        xytext=(5, 5), textcoords='offset points', 
                        fontsize=8, alpha=0.7)
     
@@ -174,7 +174,7 @@ def create_comparison_graphs(flopoco_df, vivado_df, reports_dir):
             # FloPoCo data
             flopoco_subset = flopoco_df[flopoco_df['Op_Bitwidth'] == op_bitwidth].copy()
             if len(flopoco_subset) > 0:
-                flopoco_freq = 1000 / flopoco_subset['Real_Required_Clock_Period_ns']
+                flopoco_freq = 1000 / flopoco_subset['Operating_Clock_Period_ns']
                 ax.scatter(flopoco_subset[resource], flopoco_freq, 
                           c='blue', alpha=0.7, s=60, label='FloPoCo', marker='o')
                 
@@ -188,14 +188,14 @@ def create_comparison_graphs(flopoco_df, vivado_df, reports_dir):
             # Vivado data - make it stand out
             vivado_subset = vivado_df[vivado_df['Op_Bitwidth'] == op_bitwidth].copy()
             if len(vivado_subset) > 0:
-                vivado_freq = 1000 / vivado_subset['Real_Required_Clock_Period_ns']
+                vivado_freq = 1000 / vivado_subset['Operating_Clock_Period_ns']
                 ax.scatter(vivado_subset[resource], vivado_freq, 
                           c='red', alpha=0.9, s=120, label='Vivado', 
                           marker='D', edgecolors='darkred', linewidth=2)
                 
                 # Add labels for Vivado points
                 for _, row in vivado_subset.iterrows():
-                    freq = 1000 / row['Real_Required_Clock_Period_ns']
+                    freq = 1000 / row['Operating_Clock_Period_ns']
                     ax.annotate('Vivado', 
                                (row[resource], freq),
                                xytext=(10, 10), textcoords='offset points', 
@@ -259,8 +259,8 @@ def create_individual_hw_resource_graphs(df, resource_type, resource_column, rep
         
         ax = axes_flat[idx]
         scatter = ax.scatter(subset[resource_column], 
-                           subset['Real_Required_Clock_Period_ns'], 
-                           c=subset['max_latency'], cmap='viridis', 
+                           subset['Operating_Clock_Period_ns'], 
+                           c=subset['latency_cycles'], cmap='viridis', 
                            alpha=0.7, s=60)
         
         # Add colorbar for latency
@@ -270,7 +270,7 @@ def create_individual_hw_resource_graphs(df, resource_type, resource_column, rep
         # Connect the points with lines if there are multiple points
         if len(subset) > 1:
             ax.plot(subset[resource_column], 
-                   subset['Real_Required_Clock_Period_ns'], 
+                   subset['Operating_Clock_Period_ns'], 
                    "r--", alpha=0.8, linewidth=2)
         
         ax.set_xlabel(f'{resource_type} Count')
@@ -280,9 +280,9 @@ def create_individual_hw_resource_graphs(df, resource_type, resource_column, rep
         
         # Add frequency labels for reference
         for _, row in subset.iterrows():
-            freq_mhz = 1000 / row['Real_Required_Clock_Period_ns']
+            freq_mhz = 1000 / row['Operating_Clock_Period_ns']
             ax.annotate(f'{freq_mhz:.0f}MHz', 
-                       (row[resource_column], row['Real_Required_Clock_Period_ns']),
+                       (row[resource_column], row['Operating_Clock_Period_ns']),
                        xytext=(5, 5), textcoords='offset points', 
                        fontsize=8, alpha=0.7)
     

@@ -27,7 +27,7 @@ find "${VIVADO_UNITS_DIR}" -type f -name "*.vhd" | sort
 declare -A op_map=( ["addf"]="Adder" ["mulf"]="Multiplier" ["divf"]="Divider" )
 
 csv_file="../reports_vivado/vivado_results.csv"
-echo "Operator,Bitwidth,Frequency_MHz,clock_period,Converters,Slack_ns,LUTs,Registers,DSPs,BRAMs,SRLs,max_latency,Real_Required_Clock_Period_ns" > $csv_file
+echo "Operator,Bitwidth,Frequency_MHz,clock_period,Converters,Slack_ns,LUTs,Registers,DSPs,BRAMs,SRLs,latency_cycles,Operating_Clock_Period_ns" > $csv_file
 echo "Created CSV report file: $csv_file"
 
 # You may want to define your profiling parameters here
@@ -50,8 +50,8 @@ for vhdl_path in "${VIVADO_UNITS_DIR}"/*.vhd; do
     echo "Processing $vhdl_path as $operator (top: $top_module, freq: $frequency MHz, bitwidth: $bitwidth)"
 
     # Extract pipeline depth (look for NUM_STAGE or similar in the file)
-    max_latency=$(grep -oP 'NUM_STAGE\s*:=\s*\K[0-9]+' "$vhdl_path" | head -1)
-    [ -z "$max_latency" ] && max_latency=0
+    latency_cycles=$(grep -oP 'NUM_STAGE\s*:=\s*\K[0-9]+' "$vhdl_path" | head -1)
+    [ -z "$latency_cycles" ] && latency_cycles=0
 
     # Run Vivado
     export UNIT_NAME=$top_module
@@ -90,8 +90,8 @@ for vhdl_path in "${VIVADO_UNITS_DIR}"/*.vhd; do
 
     real_required_period=$(echo "$clock_period - ($slack)" | bc -l)
 
-    echo "$operator,$bitwidth,$frequency,$clock_period,$converters,$slack,$luts,$regs,$dsps,$brams,$srls,$max_latency,$real_required_period" >> $csv_file
-    echo "  Data added to CSV report (max_latency: $max_latency cycles, real_required_period: $real_required_period ns)"
+    echo "$operator,$bitwidth,$frequency,$clock_period,$converters,$slack,$luts,$regs,$dsps,$brams,$srls,$latency_cycles,$real_required_period" >> $csv_file
+    echo "  Data added to CSV report (latency_cycles: $latency_cycles cycles, real_required_period: $real_required_period ns)"
     echo "----------------------------------------"
 done
 

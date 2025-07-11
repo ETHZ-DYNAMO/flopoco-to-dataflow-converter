@@ -1,22 +1,14 @@
 #!/bin/bash
-
+echo "Beginning generation script"
 mkdir -p generation_results0425
 
 declare -a ops=(
-    "FloatingPointAdder"
     "FloatingPointComparator"
-    "FloatingPointMultiplier"
-    "FloatingPointDivider"
-    "FloatingPointSubtractor"
-    "FloatingPointPower"
-    "FloatingPointSquareRoot"
-    "FloatingPointExponential"
-    "FloatingPointLogarithm"
 )
 
-declare -a bits=(32 64)
-declare -a freqs=(100 300 500 800)
-declare -a conversions=("none" "input" "output" "both")
+declare -a bits=(64 )
+declare -a freqs=( 500  )
+declare -a conversions=("none") # "input" "output" "both" are
 
 for op in "${ops[@]}"; do
     for bit in "${bits[@]}"; do

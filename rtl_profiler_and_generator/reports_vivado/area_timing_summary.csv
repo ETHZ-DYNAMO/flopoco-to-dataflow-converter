@@ -1,4 +1,4 @@
-Operator,Bitwidth,Frequency_MHz,clock_period,Converters,Slack_ns,LUTs,Registers,DSPs,BRAMs,SRLs,max_latency,Real_Required_Clock_Period_ns
+Operator,Bitwidth,Frequency_MHz,clock_period,Converters,Slack_ns,LUTs,Registers,DSPs,BRAMs,SRLs,latency_cycles,Operating_Clock_Period_ns
 Multiplier_Double_Full_Usage_NonBlocking,64,457,2.18818380744,noIO,0,275,502,10,0,0,,2.18818380744
 Multiplier_Double_Max_Usage_NonBlocking,64,457,2.18818380744,noIO,0,238,494,11,0,0,,2.18818380744
 Multiplier_Double_Medium_Usage_NonBlocking,64,457,2.18818380744,noIO,0,326,561,9,0,0,,2.18818380744

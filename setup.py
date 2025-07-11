@@ -76,7 +76,8 @@ operators_info = {
             64: 1
         },          # Output size is 1 bit for a comparator
         "flopoco_name": "FPComp",
-        "wrapper_name": ""
+        "wrapper_name": "cmpf_op",
+        "wrapper_name64": "cmpf_op64"
     },
     "FloatingPointMultiplier": {
         "input_size": "bitSize",

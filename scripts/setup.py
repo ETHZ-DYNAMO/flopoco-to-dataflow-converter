@@ -75,9 +75,10 @@ operators_info = {
         "output_size": {
             32: 1,
             64: 1
-        },          # Output size is 1 bit for a comparator
-        "flopoco_name": "FPComp",
-        "wrapper_name": ""
+        },
+        "flopoco_name": "FPComparator",
+        "wrapper_name": "fpcomparator_op",
+        "wrapper_name64": "fpcomparator_op64"
     },
     "FloatingPointMultiplier": {
         "input_size": "bitSize",
@@ -349,6 +350,12 @@ supported_operators_info =[
     {
         "name": "FloatingPointLogarithm",
         "flopoco_name": "FPLog",
+        "exponent_size": 8,
+        "mantissa_size": 23,
+    },
+    {
+        "name": "FloatingPointComparator",
+        "flopoco_name": "FPComparator",
         "exponent_size": 8,
         "mantissa_size": 23,
     }

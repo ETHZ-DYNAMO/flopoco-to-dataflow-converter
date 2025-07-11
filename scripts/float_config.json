@@ -1,11 +1,11 @@
 {
   "operators": [
     {
-      "name": "FloatingPointAdder",
+      "name": "FloatingPointComparator",
       "bitSize": 64,
-      "targetFrequencyMHz": 800,
-      "noInputConversion": true,
-      "noOutputConversion": true
+      "targetFrequencyMHz": 500,
+      "noInputConversion": false,
+      "noOutputConversion": false
     }
   ]
 }
