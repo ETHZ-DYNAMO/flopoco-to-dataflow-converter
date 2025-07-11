@@ -13,3 +13,5 @@ replication_files/
 test.input
 TestBench_*
 ./rtl_profiler_and_generator/generated_units/*
+./rtl_profiler_and_generator/reports/timing/*
+./rtl_profiler_and_generator/reports/utilisation/*
