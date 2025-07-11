@@ -1,0 +1,85 @@
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Mon Jun  9 18:20:51 2025
+| Host         : ee-tik-dynamo-eda1 running 64-bit AlmaLinux release 8.10 (Cerulean Leopard)
+| Command      : report_timing
+| Design       : fadd_op
+| Device       : 7k160t-fbg484
+| Speed File   : -1  PRODUCTION 1.12 2017-02-17
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -1.758ns  (required time - arrival time)
+  Source:                 operator/LZCAndShifter/level6_c4_reg[48]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@1.666ns period=3.333ns})
+  Destination:            operator/LZCAndShifter/level3_c5_reg[4]/R
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@1.666ns period=3.333ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.333ns  (clk rise@3.333ns - clk rise@0.000ns)
+  Data Path Delay:        4.659ns  (logic 0.732ns (15.711%)  route 3.927ns (84.289%))
+  Logic Levels:           8  (LUT3=1 LUT4=1 LUT5=1 LUT6=5)
+  Clock Path Skew:        -0.029ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.329ns = ( 4.662 - 3.333 ) 
+    Source Clock Delay      (SCD):    1.440ns
+    Clock Pessimism Removal (CPR):    0.082ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=620, unset)          1.440     1.440    operator/LZCAndShifter/clk
+    SLICE_X12Y128        FDRE                                         r  operator/LZCAndShifter/level6_c4_reg[48]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X12Y128        FDRE (Prop_fdre_C_Q)         0.308     1.748 f  operator/LZCAndShifter/level6_c4_reg[48]/Q
+                         net (fo=4, routed)           0.464     2.212    operator/LZCAndShifter/level6_c4[48]
+    SLICE_X13Y127        LUT4 (Prop_lut4_I0_O)        0.053     2.265 r  operator/LZCAndShifter/count5_c5_i_9/O
+                         net (fo=2, routed)           0.306     2.571    operator/LZCAndShifter/count5_c5_i_9_n_0
+    SLICE_X15Y127        LUT5 (Prop_lut5_I4_O)        0.053     2.624 r  operator/LZCAndShifter/count5_c5_i_5/O
+                         net (fo=16, routed)          0.482     3.106    operator/LZCAndShifter/count5_c5_i_5_n_0
+    SLICE_X15Y125        LUT6 (Prop_lut6_I4_O)        0.053     3.159 f  operator/LZCAndShifter/level3_c5[55]_i_3/O
+                         net (fo=3, routed)           0.482     3.641    operator/LZCAndShifter/level5_c4[47]
+    SLICE_X14Y126        LUT6 (Prop_lut6_I5_O)        0.053     3.694 r  operator/LZCAndShifter/count4_c5_i_3/O
+                         net (fo=2, routed)           0.582     4.276    operator/LZCAndShifter/count4_c5_i_3_n_0
+    SLICE_X16Y126        LUT6 (Prop_lut6_I3_O)        0.053     4.329 r  operator/LZCAndShifter/count4_c5_i_1/O
+                         net (fo=32, routed)          0.312     4.641    operator/LZCAndShifter/count4_c5_i_1_n_0
+    SLICE_X16Y125        LUT6 (Prop_lut6_I4_O)        0.053     4.694 f  operator/LZCAndShifter/level3_c5[53]_i_2/O
+                         net (fo=2, routed)           0.689     5.383    operator/LZCAndShifter/level4_c4[53]
+    SLICE_X15Y124        LUT6 (Prop_lut6_I0_O)        0.053     5.436 r  operator/LZCAndShifter/count3_c5_i_1/O
+                         net (fo=51, routed)          0.229     5.665    operator/LZCAndShifter/count3_c5_i_1_n_0
+    SLICE_X15Y124        LUT3 (Prop_lut3_I1_O)        0.053     5.718 r  operator/LZCAndShifter/level3_c5[7]_i_1/O
+                         net (fo=8, routed)           0.381     6.099    operator/LZCAndShifter/level3_c5[7]_i_1_n_0
+    SLICE_X19Y124        FDRE                                         r  operator/LZCAndShifter/level3_c5_reg[4]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        3.333     3.333 r  
+                                                      0.000     3.333 r  clk (IN)
+                         net (fo=620, unset)          1.329     4.662    operator/LZCAndShifter/clk
+    SLICE_X19Y124        FDRE                                         r  operator/LZCAndShifter/level3_c5_reg[4]/C
+                         clock pessimism              0.082     4.744    
+                         clock uncertainty           -0.035     4.709    
+    SLICE_X19Y124        FDRE (Setup_fdre_C_R)       -0.367     4.342    operator/LZCAndShifter/level3_c5_reg[4]
+  -------------------------------------------------------------------
+                         required time                          4.342    
+                         arrival time                          -6.099    
+  -------------------------------------------------------------------
+                         slack                                 -1.758    
+
+
+
+
+
+Clock Frequency: 300 MHz
+Clock Period: 3.33333333333333333333 ns
+Worst Negative Slack (WNS): -1.758 ns

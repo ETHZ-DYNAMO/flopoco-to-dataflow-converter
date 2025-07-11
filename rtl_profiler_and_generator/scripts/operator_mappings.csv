@@ -1,0 +1,5 @@
+op,csv_op,main_entity,top_module,component
+addf,Adder,FloatingPointAdder,fadd_op,handshake.addf
+mulf,Multiplier,FloatingPointMultiplier,fmul_op,handshake.mulf
+divf,Divider,FloatingPointDivider,fdiv_op,handshake.divf
+subf,Subtractor,FloatingPointSubtractor,fsub_op,handshake.subf

@@ -1,0 +1,94 @@
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Mon Jun  9 17:42:11 2025
+| Host         : ee-tik-dynamo-eda1 running 64-bit AlmaLinux release 8.10 (Cerulean Leopard)
+| Command      : report_timing
+| Design       : fmul_op
+| Device       : 7k160t-fbg484
+| Speed File   : -1  PRODUCTION 1.12 2017-02-17
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -0.758ns  (required time - arrival time)
+  Source:                 operator/SignificandMultiplication/bitheapFinalAdd_bh7/X_1_c4_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Destination:            operator/RoundingAdder/X_1_c5_reg[34]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            2.000ns  (clk rise@2.000ns - clk rise@0.000ns)
+  Data Path Delay:        2.755ns  (logic 1.685ns (61.151%)  route 1.070ns (38.849%))
+  Logic Levels:           9  (CARRY4=7 LUT2=2)
+  Clock Path Skew:        -0.018ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.533ns = ( 3.533 - 2.000 ) 
+    Source Clock Delay      (SCD):    1.635ns
+    Clock Pessimism Removal (CPR):    0.084ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=930, unset)          1.635     1.635    operator/SignificandMultiplication/bitheapFinalAdd_bh7/clk
+    SLICE_X10Y73         FDRE                                         r  operator/SignificandMultiplication/bitheapFinalAdd_bh7/X_1_c4_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X10Y73         FDRE (Prop_fdre_C_Q)         0.308     1.943 r  operator/SignificandMultiplication/bitheapFinalAdd_bh7/X_1_c4_reg[0]/Q
+                         net (fo=2, routed)           0.420     2.363    operator/SignificandMultiplication/bitheapFinalAdd_bh7/X_1_c4[0]
+    SLICE_X10Y72         LUT2 (Prop_lut2_I0_O)        0.053     2.416 r  operator/SignificandMultiplication/bitheapFinalAdd_bh7/X_1_c5[14]_i_4/O
+                         net (fo=1, routed)           0.000     2.416    operator/SignificandMultiplication/bitheapFinalAdd_bh7/X_1_c5[14]_i_4_n_0
+    SLICE_X10Y72         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.297     2.713 r  operator/SignificandMultiplication/bitheapFinalAdd_bh7/X_1_c5_reg[14]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     2.713    operator/SignificandMultiplication/bitheapFinalAdd_bh7/X_1_c5_reg[14]_i_2_n_0
+    SLICE_X10Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     2.773 r  operator/SignificandMultiplication/bitheapFinalAdd_bh7/X_1_c5_reg[18]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     2.773    operator/SignificandMultiplication/bitheapFinalAdd_bh7/X_1_c5_reg[18]_i_2_n_0
+    SLICE_X10Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     2.833 r  operator/SignificandMultiplication/bitheapFinalAdd_bh7/X_1_c5_reg[22]_i_2/CO[3]
+                         net (fo=1, routed)           0.008     2.841    operator/SignificandMultiplication/bitheapFinalAdd_bh7/X_1_c5_reg[22]_i_2_n_0
+    SLICE_X10Y75         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.181     3.022 r  operator/SignificandMultiplication/bitheapFinalAdd_bh7/X_0_c5_reg[26]_i_2/O[3]
+                         net (fo=55, routed)          0.643     3.664    operator/SignificandMultiplication/bitheapFinalAdd_bh7/sigProd_c4__0[105]
+    SLICE_X11Y80         LUT2 (Prop_lut2_I1_O)        0.142     3.806 r  operator/SignificandMultiplication/bitheapFinalAdd_bh7/X_1_c5[28]_i_2/O
+                         net (fo=1, routed)           0.000     3.806    operator/SignificandMultiplication/bitheapFinalAdd_bh7/X_1_c5[28]_i_2_n_0
+    SLICE_X11Y80         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.313     4.119 r  operator/SignificandMultiplication/bitheapFinalAdd_bh7/X_1_c5_reg[28]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     4.119    operator/SignificandMultiplication/bitheapFinalAdd_bh7/X_1_c5_reg[28]_i_1_n_0
+    SLICE_X11Y81         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058     4.177 r  operator/SignificandMultiplication/bitheapFinalAdd_bh7/X_1_c5_reg[32]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     4.177    operator/SignificandMultiplication/bitheapFinalAdd_bh7/X_1_c5_reg[32]_i_1_n_0
+    SLICE_X11Y82         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.213     4.390 r  operator/SignificandMultiplication/bitheapFinalAdd_bh7/X_1_c5_reg[36]_i_1/O[1]
+                         net (fo=1, routed)           0.000     4.390    operator/RoundingAdder/X_1_c5_reg[37]_0[34]
+    SLICE_X11Y82         FDRE                                         r  operator/RoundingAdder/X_1_c5_reg[34]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        2.000     2.000 r  
+                                                      0.000     2.000 r  clk (IN)
+                         net (fo=930, unset)          1.533     3.533    operator/RoundingAdder/clk
+    SLICE_X11Y82         FDRE                                         r  operator/RoundingAdder/X_1_c5_reg[34]/C
+                         clock pessimism              0.084     3.617    
+                         clock uncertainty           -0.035     3.582    
+    SLICE_X11Y82         FDRE (Setup_fdre_C_D)        0.051     3.633    operator/RoundingAdder/X_1_c5_reg[34]
+  -------------------------------------------------------------------
+                         required time                          3.633    
+                         arrival time                          -4.390    
+  -------------------------------------------------------------------
+                         slack                                 -0.758    
+
+
+
+
+
+Clock Frequency: 500 MHz
+Clock Period: 2.00000000000000000000 ns
+Worst Negative Slack (WNS): -0.758 ns

@@ -1,0 +1,118 @@
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Mon Jun  9 17:46:08 2025
+| Host         : ee-tik-dynamo-eda1 running 64-bit AlmaLinux release 8.10 (Cerulean Leopard)
+| Command      : report_timing
+| Design       : fdiv_op
+| Device       : 7k160t-fbg484
+| Speed File   : -1  PRODUCTION 1.12 2017-02-17
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -3.296ns  (required time - arrival time)
+  Source:                 operator/q13_c1_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@1.666ns period=3.333ns})
+  Destination:            operator/absq11D_c2_reg[18]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@1.666ns period=3.333ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.333ns  (clk rise@3.333ns - clk rise@0.000ns)
+  Data Path Delay:        6.334ns  (logic 2.516ns (39.722%)  route 3.818ns (60.278%))
+  Logic Levels:           19  (CARRY4=11 LUT2=2 LUT4=1 LUT5=1 LUT6=3 MUXF7=1)
+  Clock Path Skew:        -0.295ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.346ns = ( 4.679 - 3.333 ) 
+    Source Clock Delay      (SCD):    1.651ns
+    Clock Pessimism Removal (CPR):    0.010ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=649, unset)          1.651     1.651    operator/clk
+    SLICE_X18Y94         FDRE                                         r  operator/q13_c1_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X18Y94         FDRE (Prop_fdre_C_Q)         0.308     1.959 r  operator/q13_c1_reg[2]/Q
+                         net (fo=27, routed)          0.515     2.474    operator/in
+    SLICE_X16Y94         LUT2 (Prop_lut2_I0_O)        0.053     2.527 r  operator/A0__1_carry_i_4/O
+                         net (fo=1, routed)           0.000     2.527    operator/A0__1_carry_i_4_n_0
+    SLICE_X16Y94         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.310     2.837 r  operator/A0__1_carry/CO[3]
+                         net (fo=1, routed)           0.000     2.837    operator/A0__1_carry_n_0
+    SLICE_X16Y95         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     2.897 r  operator/A0__1_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     2.897    operator/A0__1_carry__0_n_0
+    SLICE_X16Y96         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     2.957 r  operator/A0__1_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     2.957    operator/A0__1_carry__1_n_0
+    SLICE_X16Y97         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     3.017 r  operator/A0__1_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     3.017    operator/A0__1_carry__2_n_0
+    SLICE_X16Y98         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.181     3.198 f  operator/A0__1_carry__3/O[3]
+                         net (fo=9, routed)           0.719     3.917    operator/SelFunctionTable12/out[0]
+    SLICE_X16Y101        LUT6 (Prop_lut6_I3_O)        0.142     4.059 r  operator/SelFunctionTable12/qM12_c7_reg[1]_srl6_i_2/O
+                         net (fo=2, routed)           0.318     4.376    operator/SelFunctionTable12/qM12_c7_reg[1]_srl6_i_2_n_0
+    SLICE_X13Y101        LUT2 (Prop_lut2_I0_O)        0.053     4.429 r  operator/SelFunctionTable12/qM12_c7_reg[1]_srl6_i_1/O
+                         net (fo=27, routed)          0.786     5.216    operator/qM12_c10
+    SLICE_X14Y98         LUT4 (Prop_lut4_I3_O)        0.053     5.269 r  operator/betaw11_c10__1_carry_i_5/O
+                         net (fo=1, routed)           0.000     5.269    operator/betaw11_c10__1_carry_i_5_n_0
+    SLICE_X14Y98         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.297     5.566 r  operator/betaw11_c10__1_carry/CO[3]
+                         net (fo=1, routed)           0.000     5.566    operator/betaw11_c10__1_carry_n_0
+    SLICE_X14Y99         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     5.626 r  operator/betaw11_c10__1_carry__0/CO[3]
+                         net (fo=1, routed)           0.001     5.626    operator/betaw11_c10__1_carry__0_n_0
+    SLICE_X14Y100        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     5.686 r  operator/betaw11_c10__1_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     5.686    operator/betaw11_c10__1_carry__1_n_0
+    SLICE_X14Y101        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     5.746 r  operator/betaw11_c10__1_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     5.746    operator/betaw11_c10__1_carry__2_n_0
+    SLICE_X14Y102        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     5.806 r  operator/betaw11_c10__1_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     5.806    operator/betaw11_c10__1_carry__3_n_0
+    SLICE_X14Y103        CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.220     6.026 r  operator/betaw11_c10__1_carry__4/O[1]
+                         net (fo=8, routed)           0.491     6.518    operator/SelFunctionTable11/O6[2]
+    SLICE_X16Y102        LUT6 (Prop_lut6_I0_O)        0.155     6.673 r  operator/SelFunctionTable11/qP11_c7_reg[0]_srl6_i_5/O
+                         net (fo=1, routed)           0.000     6.673    operator/SelFunctionTable11/qP11_c7_reg[0]_srl6_i_5_n_0
+    SLICE_X16Y102        MUXF7 (Prop_muxf7_I0_O)      0.121     6.794 r  operator/SelFunctionTable11/qP11_c7_reg[0]_srl6_i_4/O
+                         net (fo=1, routed)           0.444     7.238    operator/SelFunctionTable11/qP11_c7_reg[0]_srl6_i_4_n_0
+    SLICE_X17Y102        LUT6 (Prop_lut6_I4_O)        0.150     7.388 r  operator/SelFunctionTable11/qP11_c7_reg[0]_srl6_i_1/O
+                         net (fo=26, routed)          0.544     7.932    operator/SelFunctionTable11_n_3
+    SLICE_X13Y101        LUT5 (Prop_lut5_I2_O)        0.053     7.985 r  operator/absq11D_c2[18]_i_1/O
+                         net (fo=1, routed)           0.000     7.985    operator/absq11D_c1[18]
+    SLICE_X13Y101        FDRE                                         r  operator/absq11D_c2_reg[18]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        3.333     3.333 r  
+                                                      0.000     3.333 r  clk (IN)
+                         net (fo=649, unset)          1.346     4.679    operator/clk
+    SLICE_X13Y101        FDRE                                         r  operator/absq11D_c2_reg[18]/C
+                         clock pessimism              0.010     4.689    
+                         clock uncertainty           -0.035     4.654    
+    SLICE_X13Y101        FDRE (Setup_fdre_C_D)        0.035     4.689    operator/absq11D_c2_reg[18]
+  -------------------------------------------------------------------
+                         required time                          4.689    
+                         arrival time                          -7.985    
+  -------------------------------------------------------------------
+                         slack                                 -3.296    
+
+
+
+
+
+Clock Frequency: 300 MHz
+Clock Period: 3.33333333333333333333 ns
+Worst Negative Slack (WNS): -3.296 ns
