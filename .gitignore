@@ -16,3 +16,4 @@ TestBench_*
 ./rtl_profiler_and_generator/reports/timing/*
 ./rtl_profiler_and_generator/reports/utilisation/*
 ./rtl_profiler_and_generator/unit_repositories_for_merge/*
+./rtl_profiler_and_generator/scripts/.Xil
