@@ -3,7 +3,7 @@ echo "Beginning generation script"
 mkdir -p generation_results0425
 
 declare -a ops=(
-    "FloatingPointComparator"
+    "FloatingPointAdder"
 )
 
 declare -a bits=(64 )
