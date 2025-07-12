@@ -9,6 +9,47 @@ mkdir -p ../reports
 mkdir -p ../reports/utilization
 mkdir -p ../reports/timing
 
+CACHE_FILE=".last_dynamatic_path"
+
+# Function to check if required folders exist and are non-empty
+check_dynamatic_path() {
+  local path="$1"
+  if [[ ! -d "$path/data/vhdl/handshake" || ! "$(ls -A "$path/data/vhdl/handshake")" ]]; then
+    return 1
+  fi
+  if [[ ! -d "$path/data/vhdl/support" || ! "$(ls -A "$path/data/vhdl/support")" ]]; then
+    return 1
+  fi
+  return 0
+}
+
+# Load cached path if it exists
+if [[ -f "$CACHE_FILE" ]]; then
+  DYNAMATIC_REPO="$(cat "$CACHE_FILE")"
+  if ! check_dynamatic_path "$DYNAMATIC_REPO"; then
+    unset DYNAMATIC_REPO
+  fi
+fi
+
+# Prompt user if no valid cached path
+if [[ -z "$DYNAMATIC_REPO" ]]; then
+  read -rp "Enter absolute path to Dynamatic repo: " DYNAMATIC_REPO
+  if ! check_dynamatic_path "$DYNAMATIC_REPO"; then
+    echo "Error: Required folders not found or empty at $DYNAMATIC_REPO"
+    exit 1
+  fi
+  echo "$DYNAMATIC_REPO" > "$CACHE_FILE"
+fi
+
+# Create dependencies directory
+mkdir -p ../dependencies
+
+# Copy required dependencies
+cp -r "$DYNAMATIC_REPO/data/vhdl/handshake" ../dependencies/
+cp -r "$DYNAMATIC_REPO/data/vhdl/support" ../dependencies/
+
+echo "Copied handshake and support dependencies from: $DYNAMATIC_REPO"
+
 # Get absolute path to current directory
 SCRIPT_DIR="$(pwd)"
 GENERATED_UNITS_DIR="${SCRIPT_DIR}/../generated_units"
