@@ -41,12 +41,10 @@ if [[ -z "$DYNAMATIC_REPO" ]]; then
   echo "$DYNAMATIC_REPO" > "$CACHE_FILE"
 fi
 
-# Create dependencies directory
 mkdir -p ../dependencies
-
-# Copy required dependencies
-cp -r "$DYNAMATIC_REPO/data/vhdl/handshake" ../dependencies/
-cp -r "$DYNAMATIC_REPO/data/vhdl/support" ../dependencies/
+# Copy required dependencies from Dynamatic
+find "$DYNAMATIC_REPO/data/vhdl/handshake/" -type f ! -name "constant.vhd" -exec cp {} ../dependencies/ \;
+find "$DYNAMATIC_REPO/data/vhdl/support/" -type f ! -name "constant.vhd" -exec cp {} ../dependencies/ \;
 
 echo "Copied handshake and support dependencies from: $DYNAMATIC_REPO"
 
@@ -93,7 +91,7 @@ extract_max_pipeline_depth() {
     
     echo "    Extracting pipeline depths from: $vhd_file" >&2
     
-    # Find all lines containing "Pipeline depth:" and extract the numeric values
+
     while IFS= read -r line; do
         if [[ $line =~ --[[:space:]]*Pipeline[[:space:]]+depth:[[:space:]]*([0-9]+)[[:space:]]*cycles? ]]; then
             depth="${BASH_REMATCH[1]}"
