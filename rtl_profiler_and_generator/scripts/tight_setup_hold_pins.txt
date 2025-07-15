@@ -1,82 +1,13 @@
-+====================+===================+=======================================================================================================+
-| Launch Setup Clock | Launch Hold Clock | Pin                                                                                                   |
-+====================+===================+=======================================================================================================+
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid253_Out0_copy254_c2_reg[2]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid259_Out0_copy260_c2_reg[1]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid249_Out0_copy250_c2_reg[1]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid263_Out0_copy264_c2_reg[0]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid259_Out0_copy260_c2_reg[2]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid255_Out0_copy256_c2_reg[2]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid255_Out0_copy256_c2_reg[1]/D |
-| clk                | clk               | operator/RoundingAdder/X_10_c24_reg[2]_srl11/D                                                        |
-| clk                | clk               | operator/RoundingAdder/X_10_c24_reg[1]_srl11/D                                                        |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid253_Out0_copy254_c2_reg[1]/D |
-| clk                | clk               | operator/RoundingAdder/X_11_c25_reg[0]_srl12_srlopt/D                                                 |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid263_Out0_copy264_c2_reg[2]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid263_Out0_copy264_c2_reg[1]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid257_Out0_copy258_c2_reg[0]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid249_Out0_copy250_c2_reg[2]/D |
-| clk                | clk               | operator/RoundingAdder/X_11_c25_reg[1]_srl12_srlopt/D                                                 |
-| clk                | clk               | operator/RoundingAdder/X_9_c23_reg[1]_srl10_srlopt/D                                                  |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid251_Out0_copy252_c2_reg[2]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid251_Out0_copy252_c2_reg[0]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid247_Out0_copy248_c2_reg[1]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid261_Out0_copy262_c2_reg[2]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid261_Out0_copy262_c2_reg[1]/D |
-| clk                | clk               | operator/expSumPreSub_c2_reg[7]/D                                                                     |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_14_3_Freq800_uid164_bh7_uid267_Out0_copy268_c2_reg[2]/D |
-| clk                | clk               | operator/SignificandMultiplication/bitheapFinalAdd_bh7/R_2_c13_reg[1]_srl7/D                          |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid249_Out0_copy250_c2_reg[0]/D |
-| clk                | clk               | operator/SignificandMultiplication/bh7_w21_7_c2_reg/D                                                 |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_14_3_Freq800_uid164_bh7_uid267_Out0_copy268_c2_reg[0]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_14_3_Freq800_uid164_bh7_uid267_Out0_copy268_c2_reg[1]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid259_Out0_copy260_c2_reg[0]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid251_Out0_copy252_c2_reg[1]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid247_Out0_copy248_c2_reg[0]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid253_Out0_copy254_c2_reg[0]/D |
-| clk                | clk               | operator/expSumPreSub_c2_reg[4]/D                                                                     |
-| clk                | clk               | operator/RoundingAdder/X_9_c23_reg[2]_srl10_srlopt/D                                                  |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid265_Out0_copy266_c2_reg[0]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_14_3_Freq800_uid164_bh7_uid309_Out0_copy310_c3_reg[2]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid317_Out0_copy318_c3_reg[2]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_14_3_Freq800_uid164_bh7_uid309_Out0_copy310_c3_reg[0]/D |
-| clk                | clk               | operator/SignificandMultiplication/bitheapFinalAdd_bh7/Cin_5_c9_reg/D                                 |
-| clk                | clk               | operator/SignificandMultiplication/bitheapFinalAdd_bh7/R_8_c13_reg[2]/D                               |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_14_3_Freq800_uid164_bh7_uid307_Out0_copy308_c3_reg[1]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_3_2_Freq800_uid160_bh7_uid269_Out0_copy270_c2_reg[0]/D  |
-| clk                | clk               | operator/expSum_c3_reg[5]/D                                                                           |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_14_3_Freq800_uid164_bh7_uid301_Out0_copy302_c3_reg[1]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_14_3_Freq800_uid164_bh7_uid315_Out0_copy316_c3_reg[0]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid245_Out0_copy246_c2_reg[0]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_14_3_Freq800_uid164_bh7_uid311_Out0_copy312_c3_reg[2]/D |
-| clk                | clk               | operator/SignificandMultiplication/bitheapFinalAdd_bh7/Cin_3_c7_reg/D                                 |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_14_3_Freq800_uid164_bh7_uid295_Out0_copy296_c3_reg[1]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_14_3_Freq800_uid164_bh7_uid307_Out0_copy308_c3_reg[2]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_14_3_Freq800_uid164_bh7_uid303_Out0_copy304_c3_reg[0]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_14_3_Freq800_uid164_bh7_uid301_Out0_copy302_c3_reg[2]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_14_3_Freq800_uid164_bh7_uid299_Out0_copy300_c3_reg[2]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_14_3_Freq800_uid164_bh7_uid313_Out0_copy314_c3_reg[2]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_14_3_Freq800_uid164_bh7_uid309_Out0_copy310_c3_reg[1]/D |
-| clk                | clk               | operator/RoundingAdder/R_10_c26_reg[1]/D                                                              |
-| clk                | clk               | operator/SignificandMultiplication/bitheapFinalAdd_bh7/Cin_7_c11_reg/D                                |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid321_Out0_copy322_c3_reg[0]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_14_3_Freq800_uid164_bh7_uid311_Out0_copy312_c3_reg[0]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid319_Out0_copy320_c3_reg[2]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_14_3_Freq800_uid164_bh7_uid301_Out0_copy302_c3_reg[0]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_23_3_Freq800_uid156_bh7_uid319_Out0_copy320_c3_reg[1]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_14_3_Freq800_uid164_bh7_uid303_Out0_copy304_c3_reg[1]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_14_3_Freq800_uid164_bh7_uid303_Out0_copy304_c3_reg[2]/D |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_14_3_Freq800_uid164_bh7_uid311_Out0_copy312_c3_reg[1]/D |
-| clk                | clk               | operator/SignificandMultiplication/bitheapFinalAdd_bh7/Cin_8_c12_reg/D                                |
-| clk                | clk               | operator/RoundingAdder/Cin_8_c23_reg/D                                                                |
-| clk                | clk               | operator/RoundingAdder/R_10_c26_reg[0]/D                                                              |
-| clk                | clk               | operator/SignificandMultiplication/bitheapFinalAdd_bh7/Cin_6_c10_reg/D                                |
-| clk                | clk               | operator/SignificandMultiplication/Compressor_14_3_Freq800_uid164_bh7_uid307_Out0_copy308_c3_reg[0]/D |
-| clk                | clk               | operator/RoundingAdder/Cin_4_c19_reg/D                                                                |
-| clk                | clk               | operator/RoundingAdder/Cin_9_c24_reg/D                                                                |
-| clk                | clk               | operator/SignificandMultiplication/bh7_w20_6_c2_reg/D                                                 |
-| clk                | clk               | operator/expSum_c3_reg[2]/D                                                                           |
-| clk                | clk               | operator/RoundingAdder/Cin_5_c20_reg/D                                                                |
-| clk                | clk               | operator/RoundingAdder/Cin_2_c17_reg/D                                                                |
-| clk                | clk               | operator/expSum_c12_reg[7]_srl9/D                                                                     |
-+--------------------+-------------------+-------------------------------------------------------------------------------------------------------+
++====================+===================+====================================================+
+| Launch Setup Clock | Launch Hold Clock | Pin                                                |
++====================+===================+====================================================+
+| clk                | clk               | operator/LZCAndShifter/level3_c7_reg[8]/D          |
+| clk                | clk               | operator/LZCAndShifter/level3_c7_reg[22]/D         |
+| clk                | clk               | operator/LZCAndShifter/level3_c7_reg[10]/D         |
+| clk                | clk               | operator/LZCAndShifter/level3_c7_reg[13]/D         |
+| clk                | clk               | operator/LZCAndShifter/level3_c7_reg[12]/D         |
+| clk                | clk               | operator/RightShifterComponent/level2_c2_reg[22]/D |
+| clk                | clk               | operator/RightShifterComponent/level2_c2_reg[18]/D |
+| clk                | clk               | operator/LZCAndShifter/level3_c7_reg[23]/D         |
+| clk                | clk               | operator/RightShifterComponent/level2_c2_reg[13]/D |
++--------------------+-------------------+----------------------------------------------------+
