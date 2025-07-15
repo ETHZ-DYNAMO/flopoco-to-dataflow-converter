@@ -1,2 +1,1 @@
 Operator,Bitwidth,Frequency_MHz,Flopoco_clock_period,Converters,Slack_ns,LUTs,Registers,DSPs,BRAMs,SRLs,latency_cycles,Operating_Clock_Period_ns
-Multiplier,32,300,3.33333333333333333333,noIO,0.458,398,153,1,0,0,2,2.87533333333333333333

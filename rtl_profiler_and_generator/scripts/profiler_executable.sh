@@ -40,11 +40,15 @@ if [[ -z "$DYNAMATIC_REPO" ]]; then
   fi
   echo "$DYNAMATIC_REPO" > "$CACHE_FILE"
 fi
-
+export DYNAMATIC_REPO
 mkdir -p ../dependencies
 # Copy required dependencies from Dynamatic
-find "$DYNAMATIC_REPO/data/vhdl/handshake/" -type f ! -name "constant.vhd" -exec cp {} ../dependencies/ \;
-find "$DYNAMATIC_REPO/data/vhdl/support/" -type f ! -name "constant.vhd" -exec cp {} ../dependencies/ \;
+cp -r "$DYNAMATIC_REPO/data/vhdl/handshake" ../dependencies/
+cp -r "$DYNAMATIC_REPO/data/vhdl/support" ../dependencies/
+
+# Remove constant.vhd files if they exist
+rm -f ../dependencies/handshake/constant.vhd
+rm -f ../dependencies/support/constant.vhd
 
 echo "Copied handshake and support dependencies from: $DYNAMATIC_REPO"
 
