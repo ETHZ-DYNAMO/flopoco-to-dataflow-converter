@@ -4,7 +4,7 @@ INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max 
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
-| Date         : Sat Jul 12 16:35:01 2025
+| Date         : Thu Jul 17 00:40:08 2025
 | Host         : ee-tik-dynamo-eda1 running 64-bit AlmaLinux release 8.10 (Cerulean Leopard)
 | Command      : report_timing
 | Design       : fdiv_op
@@ -15,20 +15,20 @@ Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanc
 
 Timing Report
 
-Slack (VIOLATED) :        -6.008ns  (required time - arrival time)
-  Source:                 operator/qM11_c4_reg[1]/C
+Slack (VIOLATED) :        -4.152ns  (required time - arrival time)
+  Source:                 operator/qM9_c1_reg[1]/C
                             (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            operator/q6_copy27_c5_reg[0]/D
+  Destination:            operator/absq4D_c2_reg[10]/D
                             (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
-  Data Path Delay:        15.922ns  (logic 7.716ns (48.461%)  route 8.206ns (51.539%))
-  Logic Levels:           79  (CARRY4=61 LUT1=1 LUT4=1 LUT5=1 LUT6=12 MUXF7=3)
-  Clock Path Skew:        -0.124ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    1.320ns = ( 11.320 - 10.000 ) 
-    Source Clock Delay      (SCD):    1.444ns
-    Clock Pessimism Removal (CPR):    0.000ns
+  Data Path Delay:        14.120ns  (logic 5.562ns (39.392%)  route 8.558ns (60.608%))
+  Logic Levels:           45  (CARRY4=26 LUT3=1 LUT4=3 LUT5=1 LUT6=11 MUXF7=3)
+  Clock Path Skew:        -0.032ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.338ns = ( 11.338 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.452ns
+    Clock Pessimism Removal (CPR):    0.082ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -39,245 +39,142 @@ Slack (VIOLATED) :        -6.008ns  (required time - arrival time)
   -------------------------------------------------------------------    -------------------
                          (clock clk rise edge)        0.000     0.000 r  
                                                       0.000     0.000 r  clk (IN)
-                         net (fo=1048, unset)         1.444     1.444    operator/clk
-    SLICE_X11Y118        FDRE                                         r  operator/qM11_c4_reg[1]/C
+                         net (fo=214, unset)          1.452     1.452    operator/clk
+    SLICE_X13Y111        FDRE                                         r  operator/qM9_c1_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X11Y118        FDRE (Prop_fdre_C_Q)         0.269     1.713 f  operator/qM11_c4_reg[1]/Q
-                         net (fo=56, routed)          0.525     2.238    operator/qM11_c4[1]
-    SLICE_X10Y117        LUT1 (Prop_lut1_I0_O)        0.056     2.294 r  operator/betaw6_c5[21]_i_23/O
-                         net (fo=1, routed)           0.000     2.294    operator/p_0_out__15
-    SLICE_X10Y117        CARRY4 (Prop_carry4_DI[0]_CO[3])
-                                                      0.281     2.575 r  operator/betaw6_c5_reg[21]_i_17/CO[3]
-                         net (fo=1, routed)           0.000     2.575    operator/betaw6_c5_reg[21]_i_17_n_0
-    SLICE_X10Y118        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060     2.635 r  operator/betaw6_c5_reg[25]_i_17/CO[3]
-                         net (fo=1, routed)           0.000     2.635    operator/betaw6_c5_reg[25]_i_17_n_0
-    SLICE_X10Y119        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060     2.695 r  operator/betaw6_c5_reg[29]_i_17/CO[3]
-                         net (fo=1, routed)           0.000     2.695    operator/betaw6_c5_reg[29]_i_17_n_0
-    SLICE_X10Y120        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060     2.755 r  operator/betaw6_c5_reg[33]_i_17/CO[3]
-                         net (fo=1, routed)           0.000     2.755    operator/betaw6_c5_reg[33]_i_17_n_0
-    SLICE_X10Y121        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060     2.815 r  operator/betaw6_c5_reg[37]_i_17/CO[3]
-                         net (fo=1, routed)           0.000     2.815    operator/betaw6_c5_reg[37]_i_17_n_0
-    SLICE_X10Y122        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060     2.875 r  operator/betaw6_c5_reg[41]_i_17/CO[3]
-                         net (fo=1, routed)           0.000     2.875    operator/betaw6_c5_reg[41]_i_17_n_0
-    SLICE_X10Y123        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060     2.935 r  operator/betaw6_c5_reg[45]_i_17/CO[3]
-                         net (fo=1, routed)           0.000     2.935    operator/betaw6_c5_reg[45]_i_17_n_0
-    SLICE_X10Y124        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060     2.995 r  operator/betaw6_c5_reg[49]_i_17/CO[3]
-                         net (fo=1, routed)           0.008     3.003    operator/betaw6_c5_reg[49]_i_17_n_0
-    SLICE_X10Y125        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060     3.063 r  operator/betaw6_c5_reg[53]_i_33/CO[3]
-                         net (fo=1, routed)           0.000     3.063    operator/betaw6_c5_reg[53]_i_33_n_0
-    SLICE_X10Y126        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060     3.123 r  operator/betaw6_c5_reg[53]_i_28/CO[3]
-                         net (fo=1, routed)           0.000     3.123    operator/betaw6_c5_reg[53]_i_28_n_0
-    SLICE_X10Y127        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060     3.183 r  operator/qP8_c5_reg[1]_i_10/CO[3]
-                         net (fo=1, routed)           0.000     3.183    operator/qP8_c5_reg[1]_i_10_n_0
-    SLICE_X10Y128        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060     3.243 r  operator/qP9_c5_reg[1]_i_5/CO[3]
-                         net (fo=1, routed)           0.000     3.243    operator/qP9_c5_reg[1]_i_5_n_0
-    SLICE_X10Y129        CARRY4 (Prop_carry4_CI_O[0])
-                                                      0.135     3.378 r  operator/qP10_c5_reg[1]_i_3/O[0]
-                         net (fo=9, routed)           0.529     3.907    operator/SelFunctionTable10/out[0]
-    SLICE_X8Y128         LUT6 (Prop_lut6_I3_O)        0.153     4.060 r  operator/SelFunctionTable10/qP10_c5[0]_i_3/O
-                         net (fo=1, routed)           0.533     4.593    operator/SelFunctionTable10/qP10_c5[0]_i_3_n_0
-    SLICE_X8Y129         LUT6 (Prop_lut6_I2_O)        0.053     4.646 r  operator/SelFunctionTable10/qP10_c5[0]_i_1/O
-                         net (fo=55, routed)          0.612     5.257    operator/SelFunctionTable10_n_0
-    SLICE_X11Y126        LUT5 (Prop_lut5_I2_O)        0.053     5.310 r  operator/betaw6_c5[17]_i_20/O
-                         net (fo=1, routed)           0.000     5.310    operator/betaw6_c5[17]_i_20_n_0
-    SLICE_X11Y126        CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.324     5.634 r  operator/betaw6_c5_reg[17]_i_12/CO[3]
-                         net (fo=1, routed)           0.000     5.634    operator/betaw6_c5_reg[17]_i_12_n_0
-    SLICE_X11Y127        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.058     5.692 r  operator/betaw6_c5_reg[21]_i_12/CO[3]
-                         net (fo=1, routed)           0.000     5.692    operator/betaw6_c5_reg[21]_i_12_n_0
-    SLICE_X11Y128        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.058     5.750 r  operator/betaw6_c5_reg[25]_i_12/CO[3]
-                         net (fo=1, routed)           0.000     5.750    operator/betaw6_c5_reg[25]_i_12_n_0
-    SLICE_X11Y129        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.058     5.808 r  operator/betaw6_c5_reg[29]_i_12/CO[3]
-                         net (fo=1, routed)           0.000     5.808    operator/betaw6_c5_reg[29]_i_12_n_0
-    SLICE_X11Y130        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.058     5.866 r  operator/betaw6_c5_reg[33]_i_12/CO[3]
-                         net (fo=1, routed)           0.000     5.866    operator/betaw6_c5_reg[33]_i_12_n_0
-    SLICE_X11Y131        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.058     5.924 r  operator/betaw6_c5_reg[37]_i_12/CO[3]
-                         net (fo=1, routed)           0.000     5.924    operator/betaw6_c5_reg[37]_i_12_n_0
-    SLICE_X11Y132        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.058     5.982 r  operator/betaw6_c5_reg[41]_i_12/CO[3]
-                         net (fo=1, routed)           0.000     5.982    operator/betaw6_c5_reg[41]_i_12_n_0
-    SLICE_X11Y133        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.058     6.040 r  operator/betaw6_c5_reg[45]_i_12/CO[3]
-                         net (fo=1, routed)           0.000     6.040    operator/betaw6_c5_reg[45]_i_12_n_0
-    SLICE_X11Y134        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.058     6.098 r  operator/betaw6_c5_reg[49]_i_12/CO[3]
-                         net (fo=1, routed)           0.000     6.098    operator/betaw6_c5_reg[49]_i_12_n_0
-    SLICE_X11Y135        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.058     6.156 r  operator/betaw6_c5_reg[53]_i_23/CO[3]
-                         net (fo=1, routed)           0.000     6.156    operator/betaw6_c5_reg[53]_i_23_n_0
-    SLICE_X11Y136        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.058     6.214 r  operator/betaw6_c5_reg[53]_i_18/CO[3]
-                         net (fo=1, routed)           0.000     6.214    operator/betaw6_c5_reg[53]_i_18_n_0
-    SLICE_X11Y137        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.058     6.272 r  operator/qP8_c5_reg[1]_i_5/CO[3]
-                         net (fo=1, routed)           0.000     6.272    operator/qP8_c5_reg[1]_i_5_n_0
-    SLICE_X11Y138        CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.213     6.485 r  operator/qP9_c5_reg[1]_i_3/O[1]
-                         net (fo=9, routed)           0.474     6.959    operator/SelFunctionTable9/O18[1]
-    SLICE_X8Y137         LUT6 (Prop_lut6_I4_O)        0.152     7.111 r  operator/SelFunctionTable9/qP9_c5[1]_i_2/O
-                         net (fo=1, routed)           0.468     7.579    operator/SelFunctionTable9/qP9_c5[1]_i_2_n_0
-    SLICE_X10Y138        LUT6 (Prop_lut6_I2_O)        0.053     7.632 r  operator/SelFunctionTable9/qP9_c5[1]_i_1/O
-                         net (fo=55, routed)          0.630     8.263    operator/SelFunctionTable9_n_0
-    SLICE_X12Y137        LUT4 (Prop_lut4_I3_O)        0.053     8.316 r  operator/betaw6_c5[13]_i_16/O
-                         net (fo=1, routed)           0.000     8.316    operator/betaw6_c5[13]_i_16_n_0
-    SLICE_X12Y137        CARRY4 (Prop_carry4_S[0]_CO[3])
-                                                      0.297     8.613 r  operator/betaw6_c5_reg[13]_i_7/CO[3]
-                         net (fo=1, routed)           0.000     8.613    operator/betaw6_c5_reg[13]_i_7_n_0
-    SLICE_X12Y138        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060     8.673 r  operator/betaw6_c5_reg[17]_i_7/CO[3]
-                         net (fo=1, routed)           0.000     8.673    operator/betaw6_c5_reg[17]_i_7_n_0
-    SLICE_X12Y139        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060     8.733 r  operator/betaw6_c5_reg[21]_i_7/CO[3]
-                         net (fo=1, routed)           0.000     8.733    operator/betaw6_c5_reg[21]_i_7_n_0
-    SLICE_X12Y140        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060     8.793 r  operator/betaw6_c5_reg[25]_i_7/CO[3]
-                         net (fo=1, routed)           0.000     8.793    operator/betaw6_c5_reg[25]_i_7_n_0
-    SLICE_X12Y141        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060     8.853 r  operator/betaw6_c5_reg[29]_i_7/CO[3]
-                         net (fo=1, routed)           0.000     8.853    operator/betaw6_c5_reg[29]_i_7_n_0
-    SLICE_X12Y142        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060     8.913 r  operator/betaw6_c5_reg[33]_i_7/CO[3]
-                         net (fo=1, routed)           0.000     8.913    operator/betaw6_c5_reg[33]_i_7_n_0
-    SLICE_X12Y143        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060     8.973 r  operator/betaw6_c5_reg[37]_i_7/CO[3]
-                         net (fo=1, routed)           0.000     8.973    operator/betaw6_c5_reg[37]_i_7_n_0
-    SLICE_X12Y144        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060     9.033 r  operator/betaw6_c5_reg[41]_i_7/CO[3]
-                         net (fo=1, routed)           0.000     9.033    operator/betaw6_c5_reg[41]_i_7_n_0
-    SLICE_X12Y145        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060     9.093 r  operator/betaw6_c5_reg[45]_i_7/CO[3]
-                         net (fo=1, routed)           0.000     9.093    operator/betaw6_c5_reg[45]_i_7_n_0
-    SLICE_X12Y146        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060     9.153 r  operator/betaw6_c5_reg[49]_i_7/CO[3]
-                         net (fo=1, routed)           0.000     9.153    operator/betaw6_c5_reg[49]_i_7_n_0
-    SLICE_X12Y147        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060     9.213 r  operator/betaw6_c5_reg[53]_i_13/CO[3]
-                         net (fo=1, routed)           0.000     9.213    operator/betaw6_c5_reg[53]_i_13_n_0
-    SLICE_X12Y148        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060     9.273 r  operator/betaw6_c5_reg[53]_i_8/CO[3]
-                         net (fo=1, routed)           0.000     9.273    operator/betaw6_c5_reg[53]_i_8_n_0
-    SLICE_X12Y149        CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.212     9.485 f  operator/qP8_c5_reg[1]_i_3/O[1]
-                         net (fo=9, routed)           0.557    10.042    operator/SelFunctionTable8/O19[1]
-    SLICE_X17Y149        LUT6 (Prop_lut6_I0_O)        0.155    10.197 r  operator/SelFunctionTable8/qP8_c5[0]_i_6/O
-                         net (fo=1, routed)           0.000    10.197    operator/SelFunctionTable8/qP8_c5[0]_i_6_n_0
-    SLICE_X17Y149        MUXF7 (Prop_muxf7_I1_O)      0.129    10.326 r  operator/SelFunctionTable8/qP8_c5_reg[0]_i_4/O
-                         net (fo=1, routed)           0.302    10.628    operator/SelFunctionTable8/qP8_c5_reg[0]_i_4_n_0
-    SLICE_X15Y149        LUT6 (Prop_lut6_I4_O)        0.153    10.781 r  operator/SelFunctionTable8/qP8_c5[0]_i_1/O
-                         net (fo=55, routed)          0.761    11.542    operator/SelFunctionTable8_n_1
-    SLICE_X13Y153        LUT6 (Prop_lut6_I2_O)        0.053    11.595 r  operator/betaw6_c5[25]_i_10/O
-                         net (fo=1, routed)           0.000    11.595    operator/betaw6_c5[25]_i_10_n_0
-    SLICE_X13Y153        CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.324    11.919 r  operator/betaw6_c5_reg[25]_i_2/CO[3]
-                         net (fo=1, routed)           0.000    11.919    operator/betaw6_c5_reg[25]_i_2_n_0
-    SLICE_X13Y154        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.058    11.977 r  operator/betaw6_c5_reg[29]_i_2/CO[3]
-                         net (fo=1, routed)           0.000    11.977    operator/betaw6_c5_reg[29]_i_2_n_0
-    SLICE_X13Y155        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.058    12.035 r  operator/betaw6_c5_reg[33]_i_2/CO[3]
-                         net (fo=1, routed)           0.000    12.035    operator/betaw6_c5_reg[33]_i_2_n_0
-    SLICE_X13Y156        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.058    12.093 r  operator/betaw6_c5_reg[37]_i_2/CO[3]
-                         net (fo=1, routed)           0.000    12.093    operator/betaw6_c5_reg[37]_i_2_n_0
-    SLICE_X13Y157        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.058    12.151 r  operator/betaw6_c5_reg[41]_i_2/CO[3]
-                         net (fo=1, routed)           0.000    12.151    operator/betaw6_c5_reg[41]_i_2_n_0
-    SLICE_X13Y158        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.058    12.209 r  operator/betaw6_c5_reg[45]_i_2/CO[3]
-                         net (fo=1, routed)           0.000    12.209    operator/betaw6_c5_reg[45]_i_2_n_0
-    SLICE_X13Y159        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.058    12.267 r  operator/betaw6_c5_reg[49]_i_2/CO[3]
-                         net (fo=1, routed)           0.000    12.267    operator/betaw6_c5_reg[49]_i_2_n_0
-    SLICE_X13Y160        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.058    12.325 r  operator/betaw6_c5_reg[53]_i_3/CO[3]
-                         net (fo=1, routed)           0.000    12.325    operator/betaw6_c5_reg[53]_i_3_n_0
-    SLICE_X13Y161        CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.213    12.538 f  operator/betaw6_c5_reg[53]_i_2/O[1]
-                         net (fo=9, routed)           0.627    13.165    operator/SelFunctionTable7/O20[1]
-    SLICE_X15Y160        LUT6 (Prop_lut6_I0_O)        0.152    13.317 r  operator/SelFunctionTable7/qP7_c5[0]_i_6/O
-                         net (fo=1, routed)           0.000    13.317    operator/SelFunctionTable7/qP7_c5[0]_i_6_n_0
-    SLICE_X15Y160        MUXF7 (Prop_muxf7_I1_O)      0.129    13.446 r  operator/SelFunctionTable7/qP7_c5_reg[0]_i_4/O
-                         net (fo=1, routed)           0.416    13.863    operator/SelFunctionTable7/qP7_c5_reg[0]_i_4_n_0
-    SLICE_X12Y160        LUT6 (Prop_lut6_I4_O)        0.153    14.016 r  operator/SelFunctionTable7/qP7_c5[0]_i_1/O
-                         net (fo=55, routed)          0.849    14.865    operator/SelFunctionTable7_n_1
-    SLICE_X10Y154        LUT6 (Prop_lut6_I2_O)        0.053    14.918 r  operator/betaw6_c5[5]_i_4/O
-                         net (fo=1, routed)           0.000    14.918    operator/betaw6_c5[5]_i_4_n_0
-    SLICE_X10Y154        CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.219    15.137 r  operator/betaw6_c5_reg[5]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.137    operator/betaw6_c5_reg[5]_i_1_n_0
-    SLICE_X10Y155        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060    15.197 r  operator/betaw6_c5_reg[9]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.197    operator/betaw6_c5_reg[9]_i_1_n_0
-    SLICE_X10Y156        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060    15.257 r  operator/betaw6_c5_reg[13]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.257    operator/betaw6_c5_reg[13]_i_1_n_0
-    SLICE_X10Y157        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060    15.317 r  operator/betaw6_c5_reg[17]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.317    operator/betaw6_c5_reg[17]_i_1_n_0
-    SLICE_X10Y158        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060    15.377 r  operator/betaw6_c5_reg[21]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.377    operator/betaw6_c5_reg[21]_i_1_n_0
-    SLICE_X10Y159        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060    15.437 r  operator/betaw6_c5_reg[25]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.437    operator/betaw6_c5_reg[25]_i_1_n_0
-    SLICE_X10Y160        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060    15.497 r  operator/betaw6_c5_reg[29]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.497    operator/betaw6_c5_reg[29]_i_1_n_0
-    SLICE_X10Y161        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060    15.557 r  operator/betaw6_c5_reg[33]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.557    operator/betaw6_c5_reg[33]_i_1_n_0
-    SLICE_X10Y162        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060    15.617 r  operator/betaw6_c5_reg[37]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.617    operator/betaw6_c5_reg[37]_i_1_n_0
-    SLICE_X10Y163        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060    15.677 r  operator/betaw6_c5_reg[41]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.677    operator/betaw6_c5_reg[41]_i_1_n_0
-    SLICE_X10Y164        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060    15.737 r  operator/betaw6_c5_reg[45]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.737    operator/betaw6_c5_reg[45]_i_1_n_0
-    SLICE_X10Y165        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.060    15.797 r  operator/betaw6_c5_reg[49]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.797    operator/betaw6_c5_reg[49]_i_1_n_0
-    SLICE_X10Y166        CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.220    16.017 r  operator/betaw6_c5_reg[53]_i_1/O[1]
-                         net (fo=8, routed)           0.636    16.652    operator/SelFunctionTable6/O21[1]
-    SLICE_X11Y169        LUT6 (Prop_lut6_I1_O)        0.155    16.807 r  operator/SelFunctionTable6/q6_copy27_c5[0]_i_5/O
-                         net (fo=1, routed)           0.000    16.807    operator/SelFunctionTable6/q6_copy27_c5[0]_i_5_n_0
-    SLICE_X11Y169        MUXF7 (Prop_muxf7_I0_O)      0.127    16.934 r  operator/SelFunctionTable6/q6_copy27_c5_reg[0]_i_4/O
-                         net (fo=1, routed)           0.279    17.213    operator/SelFunctionTable6/q6_copy27_c5_reg[0]_i_4_n_0
-    SLICE_X10Y169        LUT6 (Prop_lut6_I4_O)        0.153    17.366 r  operator/SelFunctionTable6/q6_copy27_c5[0]_i_1/O
-                         net (fo=1, routed)           0.000    17.366    operator/SelFunctionTable6_n_2
-    SLICE_X10Y169        FDRE                                         r  operator/q6_copy27_c5_reg[0]/D
+    SLICE_X13Y111        FDRE (Prop_fdre_C_Q)         0.269     1.721 r  operator/qM9_c1_reg[1]/Q
+                         net (fo=27, routed)          0.624     2.345    operator/qM9_c1[1]
+    SLICE_X13Y113        LUT3 (Prop_lut3_I2_O)        0.053     2.398 r  operator/i___1_carry__0_i_2__7/O
+                         net (fo=1, routed)           0.000     2.398    operator/i___1_carry__0_i_2__7_n_0
+    SLICE_X13Y113        CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.235     2.633 r  operator/A0_inferred__3/i___1_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     2.633    operator/A0_inferred__3/i___1_carry__0_n_0
+    SLICE_X13Y114        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058     2.691 r  operator/A0_inferred__3/i___1_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     2.691    operator/A0_inferred__3/i___1_carry__1_n_0
+    SLICE_X13Y115        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058     2.749 r  operator/A0_inferred__3/i___1_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     2.749    operator/A0_inferred__3/i___1_carry__2_n_0
+    SLICE_X13Y116        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058     2.807 r  operator/A0_inferred__3/i___1_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     2.807    operator/A0_inferred__3/i___1_carry__3_n_0
+    SLICE_X13Y117        CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.213     3.020 r  operator/A0_inferred__3/i___1_carry__4/O[1]
+                         net (fo=9, routed)           0.625     3.645    operator/SelFunctionTable8/out[2]
+    SLICE_X12Y115        LUT6 (Prop_lut6_I0_O)        0.152     3.797 r  operator/SelFunctionTable8/qP8_c2[0]_i_5/O
+                         net (fo=1, routed)           0.000     3.797    operator/SelFunctionTable8/qP8_c2[0]_i_5_n_0
+    SLICE_X12Y115        MUXF7 (Prop_muxf7_I0_O)      0.121     3.918 r  operator/SelFunctionTable8/qP8_c2_reg[0]_i_4/O
+                         net (fo=1, routed)           0.241     4.159    operator/SelFunctionTable8/qP8_c2_reg[0]_i_4_n_0
+    SLICE_X12Y116        LUT6 (Prop_lut6_I4_O)        0.150     4.309 r  operator/SelFunctionTable8/qP8_c2[0]_i_1/O
+                         net (fo=27, routed)          0.733     5.042    operator/SelFunctionTable8_n_0
+    SLICE_X12Y119        LUT6 (Prop_lut6_I3_O)        0.053     5.095 r  operator/i___1_carry__1_i_4__4/O
+                         net (fo=1, routed)           0.000     5.095    operator/i___1_carry__1_i_4__4_n_0
+    SLICE_X12Y119        CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.297     5.392 r  operator/A0_inferred__4/i___1_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     5.392    operator/A0_inferred__4/i___1_carry__1_n_0
+    SLICE_X12Y120        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     5.452 r  operator/A0_inferred__4/i___1_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     5.452    operator/A0_inferred__4/i___1_carry__2_n_0
+    SLICE_X12Y121        CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.181     5.633 f  operator/A0_inferred__4/i___1_carry__3/O[3]
+                         net (fo=9, routed)           0.592     6.224    operator/SelFunctionTable7/O12[0]
+    SLICE_X12Y124        LUT6 (Prop_lut6_I3_O)        0.142     6.366 r  operator/SelFunctionTable7/qP7_c2[0]_i_6/O
+                         net (fo=1, routed)           0.000     6.366    operator/SelFunctionTable7/qP7_c2[0]_i_6_n_0
+    SLICE_X12Y124        MUXF7 (Prop_muxf7_I1_O)      0.123     6.489 r  operator/SelFunctionTable7/qP7_c2_reg[0]_i_4/O
+                         net (fo=1, routed)           0.497     6.986    operator/SelFunctionTable7/qP7_c2_reg[0]_i_4_n_0
+    SLICE_X12Y124        LUT6 (Prop_lut6_I4_O)        0.150     7.136 r  operator/SelFunctionTable7/qP7_c2[0]_i_1/O
+                         net (fo=27, routed)          0.518     7.654    operator/SelFunctionTable7_n_1
+    SLICE_X13Y122        LUT4 (Prop_lut4_I1_O)        0.053     7.707 r  operator/i___1_carry_i_5__1/O
+                         net (fo=1, routed)           0.000     7.707    operator/i___1_carry_i_5__1_n_0
+    SLICE_X13Y122        CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.313     8.020 r  operator/A0_inferred__5/i___1_carry/CO[3]
+                         net (fo=1, routed)           0.000     8.020    operator/A0_inferred__5/i___1_carry_n_0
+    SLICE_X13Y123        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058     8.078 r  operator/A0_inferred__5/i___1_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     8.078    operator/A0_inferred__5/i___1_carry__0_n_0
+    SLICE_X13Y124        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058     8.136 r  operator/A0_inferred__5/i___1_carry__1/CO[3]
+                         net (fo=1, routed)           0.008     8.144    operator/A0_inferred__5/i___1_carry__1_n_0
+    SLICE_X13Y125        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058     8.202 r  operator/A0_inferred__5/i___1_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     8.202    operator/A0_inferred__5/i___1_carry__2_n_0
+    SLICE_X13Y126        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058     8.260 r  operator/A0_inferred__5/i___1_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     8.260    operator/A0_inferred__5/i___1_carry__3_n_0
+    SLICE_X13Y127        CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.139     8.399 f  operator/A0_inferred__5/i___1_carry__4/O[0]
+                         net (fo=9, routed)           0.721     9.120    operator/SelFunctionTable6/O13[1]
+    SLICE_X19Y126        LUT6 (Prop_lut6_I1_O)        0.155     9.275 r  operator/SelFunctionTable6/qM6_c2[1]_i_2/O
+                         net (fo=2, routed)           0.374     9.649    operator/SelFunctionTable6/qM6_c2[1]_i_2_n_0
+    SLICE_X18Y126        LUT6 (Prop_lut6_I0_O)        0.053     9.702 r  operator/SelFunctionTable6/qP6_c2[1]_i_1/O
+                         net (fo=27, routed)          0.611    10.313    operator/SelFunctionTable6_n_0
+    SLICE_X16Y127        LUT4 (Prop_lut4_I2_O)        0.053    10.366 r  operator/i___1_carry_i_5__2/O
+                         net (fo=1, routed)           0.000    10.366    operator/i___1_carry_i_5__2_n_0
+    SLICE_X16Y127        CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.297    10.663 r  operator/A0_inferred__6/i___1_carry/CO[3]
+                         net (fo=1, routed)           0.000    10.663    operator/A0_inferred__6/i___1_carry_n_0
+    SLICE_X16Y128        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060    10.723 r  operator/A0_inferred__6/i___1_carry__0/CO[3]
+                         net (fo=1, routed)           0.000    10.723    operator/A0_inferred__6/i___1_carry__0_n_0
+    SLICE_X16Y129        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060    10.783 r  operator/A0_inferred__6/i___1_carry__1/CO[3]
+                         net (fo=1, routed)           0.000    10.783    operator/A0_inferred__6/i___1_carry__1_n_0
+    SLICE_X16Y130        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060    10.843 r  operator/A0_inferred__6/i___1_carry__2/CO[3]
+                         net (fo=1, routed)           0.000    10.843    operator/A0_inferred__6/i___1_carry__2_n_0
+    SLICE_X16Y131        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060    10.903 r  operator/A0_inferred__6/i___1_carry__3/CO[3]
+                         net (fo=1, routed)           0.000    10.903    operator/A0_inferred__6/i___1_carry__3_n_0
+    SLICE_X16Y132        CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.212    11.115 r  operator/A0_inferred__6/i___1_carry__4/O[1]
+                         net (fo=9, routed)           0.595    11.710    operator/SelFunctionTable5/O14[2]
+    SLICE_X23Y131        LUT6 (Prop_lut6_I5_O)        0.155    11.865 r  operator/SelFunctionTable5/qP5_c2[1]_i_2/O
+                         net (fo=1, routed)           0.553    12.418    operator/SelFunctionTable5/qP5_c2[1]_i_2_n_0
+    SLICE_X23Y130        LUT6 (Prop_lut6_I2_O)        0.053    12.471 r  operator/SelFunctionTable5/qP5_c2[1]_i_1/O
+                         net (fo=27, routed)          0.531    13.002    operator/SelFunctionTable5_n_0
+    SLICE_X21Y130        LUT4 (Prop_lut4_I2_O)        0.053    13.055 r  operator/betaw4_c10__1_carry_i_5/O
+                         net (fo=1, routed)           0.000    13.055    operator/betaw4_c10__1_carry_i_5_n_0
+    SLICE_X21Y130        CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.313    13.368 r  operator/betaw4_c10__1_carry/CO[3]
+                         net (fo=1, routed)           0.000    13.368    operator/betaw4_c10__1_carry_n_0
+    SLICE_X21Y131        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058    13.426 r  operator/betaw4_c10__1_carry__0/CO[3]
+                         net (fo=1, routed)           0.000    13.426    operator/betaw4_c10__1_carry__0_n_0
+    SLICE_X21Y132        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058    13.484 r  operator/betaw4_c10__1_carry__1/CO[3]
+                         net (fo=1, routed)           0.000    13.484    operator/betaw4_c10__1_carry__1_n_0
+    SLICE_X21Y133        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058    13.542 r  operator/betaw4_c10__1_carry__2/CO[3]
+                         net (fo=1, routed)           0.000    13.542    operator/betaw4_c10__1_carry__2_n_0
+    SLICE_X21Y134        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058    13.600 r  operator/betaw4_c10__1_carry__3/CO[3]
+                         net (fo=1, routed)           0.000    13.600    operator/betaw4_c10__1_carry__3_n_0
+    SLICE_X21Y135        CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.146    13.746 f  operator/betaw4_c10__1_carry__4/O[0]
+                         net (fo=8, routed)           0.456    14.202    operator/SelFunctionTable4/O15[1]
+    SLICE_X23Y135        LUT6 (Prop_lut6_I0_O)        0.155    14.357 r  operator/SelFunctionTable4/qP4_c2[0]_i_6/O
+                         net (fo=1, routed)           0.000    14.357    operator/SelFunctionTable4/qP4_c2[0]_i_6_n_0
+    SLICE_X23Y135        MUXF7 (Prop_muxf7_I1_O)      0.129    14.486 r  operator/SelFunctionTable4/qP4_c2_reg[0]_i_4/O
+                         net (fo=1, routed)           0.294    14.780    operator/SelFunctionTable4/qP4_c2_reg[0]_i_4_n_0
+    SLICE_X23Y136        LUT6 (Prop_lut6_I4_O)        0.153    14.933 r  operator/SelFunctionTable4/qP4_c2[0]_i_1/O
+                         net (fo=26, routed)          0.585    15.519    operator/SelFunctionTable4_n_3
+    SLICE_X23Y134        LUT5 (Prop_lut5_I2_O)        0.053    15.572 r  operator/absq4D_c2[10]_i_1/O
+                         net (fo=1, routed)           0.000    15.572    operator/absq4D_c1[10]
+    SLICE_X23Y134        FDRE                                         r  operator/absq4D_c2_reg[10]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk rise edge)       10.000    10.000 r  
                                                       0.000    10.000 r  clk (IN)
-                         net (fo=1048, unset)         1.320    11.320    operator/clk
-    SLICE_X10Y169        FDRE                                         r  operator/q6_copy27_c5_reg[0]/C
-                         clock pessimism              0.000    11.320    
-                         clock uncertainty           -0.035    11.285    
-    SLICE_X10Y169        FDRE (Setup_fdre_C_D)        0.073    11.358    operator/q6_copy27_c5_reg[0]
+                         net (fo=214, unset)          1.338    11.338    operator/clk
+    SLICE_X23Y134        FDRE                                         r  operator/absq4D_c2_reg[10]/C
+                         clock pessimism              0.082    11.420    
+                         clock uncertainty           -0.035    11.385    
+    SLICE_X23Y134        FDRE (Setup_fdre_C_D)        0.035    11.420    operator/absq4D_c2_reg[10]
   -------------------------------------------------------------------
-                         required time                         11.358    
-                         arrival time                         -17.366    
+                         required time                         11.420    
+                         arrival time                         -15.572    
   -------------------------------------------------------------------
-                         slack                                 -6.008    
+                         slack                                 -4.152    
 
 
 
@@ -285,4 +182,4 @@ Slack (VIOLATED) :        -6.008ns  (required time - arrival time)
 
 Clock Frequency: 100 MHz
 Clock Period: 10.00000000000000000000 ns
-Worst Negative Slack (WNS): -6.008 ns
+Worst Negative Slack (WNS): -4.152 ns
