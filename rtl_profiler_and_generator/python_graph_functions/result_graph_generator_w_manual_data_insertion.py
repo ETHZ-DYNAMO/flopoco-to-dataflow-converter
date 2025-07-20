@@ -355,38 +355,49 @@ def create_resource_utilization_summary(df):
 def main():
     """Main function to run the analysis"""
     reports_dir, mode = get_reports_dir()
-    
+
     print("Loading and processing FloPoCo data...")
     flopoco_df = load_and_process_data(reports_dir)
-    
+
     print(f"Loaded {len(flopoco_df)} FloPoCo data points")
     print(f"Found {len(flopoco_df['Op_Bitwidth'].unique())} unique (Operator, Bitwidth) pairs:")
     for pair in sorted(flopoco_df['Op_Bitwidth'].unique()):
         count = len(flopoco_df[flopoco_df['Op_Bitwidth'] == pair])
         print(f"  - {pair}: {count} configurations")
     print()
-    
+
     if mode == "comparison":
-        print("Loading Vivado reference data...")
-        vivado_df = load_vivado_reference_data()
-        
-        if vivado_df is not None:
-            print("Creating FloPoCo vs Vivado comparison graphs...")
-            create_comparison_graphs(flopoco_df, vivado_df, reports_dir)
-        else:
-            print("Vivado data not available, falling back to FloPoCo-only analysis...")
-            mode = "flopoco_only"
-    
+        # Inject Vivado data directly
+        vivado_data = [
+            {"Operator": "Adder",      "Input_Type": "Single", "Max_Frequency_MHz": 414.0215291195142, "LUTs": 204, "Registers": 365, "DSPs": 2, "BRAMs": 0, "SRLs": 2, "Slack_ns": 0.918, "Clock_Period_ns": 3.3333333333333335},
+            {"Operator": "Divider",    "Input_Type": "Single", "Max_Frequency_MHz": 514.8446885189634, "LUTs": 753, "Registers": 1486, "DSPs": 0, "BRAMs": 0, "SRLs": 35, "Slack_ns": 1.391, "Clock_Period_ns": 3.3333333333333335},
+            {"Operator": "Multiplier",  "Input_Type": "Single", "Max_Frequency_MHz": 377.8813452575891, "LUTs": 105, "Registers": 172,  "DSPs": 3, "BRAMs": 0, "SRLs": 0,  "Slack_ns": 0.687, "Clock_Period_ns": 3.3333333333333335},
+            {"Operator": "Subtractor", "Input_Type": "Single", "Max_Frequency_MHz": 394.1145559642669, "LUTs": 205, "Registers": 365, "DSPs": 2, "BRAMs": 0, "SRLs": 2,  "Slack_ns": 0.796, "Clock_Period_ns": 3.3333333333333335},
+        ]
+
+        # Convert to DataFrame
+        vivado_df = pd.DataFrame(vivado_data)
+
+        # Manually inject the expected columns
+        vivado_df['Bitwidth'] = 32  # Since all are 'Single'
+        vivado_df['Op_Bitwidth'] = vivado_df['Operator'] + "_32"
+        vivado_df['Operating_Clock_Period_ns'] = 1000 / vivado_df['Max_Frequency_MHz']
+        vivado_df['Source'] = 'Vivado'
+        vivado_df['latency_cycles'] = np.nan  # Optional: set to NaN if not needed
+
+        print("Creating FloPoCo vs Vivado comparison graphs...")
+        create_comparison_graphs(flopoco_df, vivado_df, reports_dir)
+
     if mode == "flopoco_only":
         create_resource_utilization_summary(flopoco_df)
         print()
-        
+
         print("Creating latency vs clock period graphs...")
         create_latency_vs_clock_period_graphs(flopoco_df, reports_dir)
-        
+
         print("Creating individual hardware resource vs clock period graphs...")
         create_all_hw_resource_graphs(flopoco_df, reports_dir)
-    
+
     print("Analysis complete!")
 
 if __name__ == "__main__":
