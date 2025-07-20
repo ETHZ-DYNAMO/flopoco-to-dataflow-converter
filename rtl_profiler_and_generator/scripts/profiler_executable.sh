@@ -1,12 +1,10 @@
 #!/bin/bash
-# Improved runner.sh - Clean output and proper dependency management
+# FPGA Implementation Script - Prompt for Dynamatic path each run, no caching
 
 echo "=== FPGA Implementation Script for Floating Point Units ==="
 
 # Create necessary directories
 mkdir -p ../reports/{utilization,timing}
-
-CACHE_FILE=".last_dynamatic_path"
 
 # Function to check if required folders exist and are non-empty
 check_dynamatic_path() {
@@ -15,21 +13,11 @@ check_dynamatic_path() {
     [[ -d "$path/data/vhdl/support" && "$(ls -A "$path/data/vhdl/support")" ]]
 }
 
-# Load or prompt for Dynamatic path
-if [[ -f "$CACHE_FILE" ]]; then
-    DYNAMATIC_REPO="$(cat "$CACHE_FILE")"
-    if ! check_dynamatic_path "$DYNAMATIC_REPO"; then
-        unset DYNAMATIC_REPO
-    fi
-fi
-
-if [[ -z "$DYNAMATIC_REPO" ]]; then
-    read -rp "Enter absolute path to Dynamatic repo: " DYNAMATIC_REPO
-    if ! check_dynamatic_path "$DYNAMATIC_REPO"; then
-        echo "Error: Required folders not found or empty at $DYNAMATIC_REPO"
-        exit 1
-    fi
-    echo "$DYNAMATIC_REPO" > "$CACHE_FILE"
+# Prompt for Dynamatic repo path
+read -rp "Enter absolute path to Dynamatic repo: " DYNAMATIC_REPO
+if ! check_dynamatic_path "$DYNAMATIC_REPO"; then
+    echo "Error: Required folders not found or empty at $DYNAMATIC_REPO"
+    exit 1
 fi
 
 export DYNAMATIC_REPO
@@ -62,7 +50,6 @@ if [[ $unit_count -eq 0 ]]; then
     echo "ERROR: No floating point unit directories found!"
     exit 1
 fi
-
 # Create CSV report
 csv_file="../reports/area_timing_summary.csv"
 echo "Operator,Bitwidth,Frequency_MHz,Flopoco_clock_period,Converters,Slack_ns,LUTs,Registers,DSPs,BRAMs,SRLs,latency_cycles,Operating_Clock_Period_ns" > "$csv_file"
